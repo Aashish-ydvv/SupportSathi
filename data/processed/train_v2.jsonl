@@ -1,0 +1,100 @@
+{"id": "001", "text": "Where is my order?", "label": "order_status"}
+{"id": "002", "text": "Mera parcel kab aayega?", "label": "order_status"}
+{"id": "003", "text": "मेरे ऑर्डर की स्थिति क्या है?", "label": "order_status"}
+{"id": "004", "text": "Please cancel my order.", "label": "cancel_order"}
+{"id": "005", "text": "Ab ye order nahi chahiye, cancel kar do.", "label": "cancel_order"}
+{"id": "006", "text": "मेरा ऑर्डर रद्द कर दीजिए।", "label": "cancel_order"}
+{"id": "007", "text": "My refund has not arrived yet.", "label": "refund"}
+{"id": "008", "text": "Product nahi chahiye, paise wapas chahiye.", "label": "refund"}
+{"id": "009", "text": "रिफंड कब तक मिलेगा?", "label": "refund"}
+{"id": "010", "text": "I received the wrong size and want an exchange.", "label": "return_replace"}
+{"id": "011", "text": "Product damaged hai, replace kar do.", "label": "return_replace"}
+{"id": "012", "text": "मुझे यह सामान वापस करना है।", "label": "return_replace"}
+{"id": "013", "text": "I was charged twice for one order.", "label": "payment_issue"}
+{"id": "014", "text": "Payment pending dikha raha hai.", "label": "payment_issue"}
+{"id": "015", "text": "पैसे कट गए लेकिन भुगतान असफल दिख रहा है।", "label": "payment_issue"}
+{"id": "016", "text": "I forgot my password and cannot sign in.", "label": "account_access"}
+{"id": "017", "text": "Login ka OTP nahi aa raha.", "label": "account_access"}
+{"id": "018", "text": "मैं अपने खाते में लॉगिन नहीं कर पा रहा हूँ।", "label": "account_access"}
+{"id": "019", "text": "Please update the phone number on my account.", "label": "update_account"}
+{"id": "020", "text": "Is order ka delivery address change karna hai.", "label": "update_account"}
+{"id": "021", "text": "मुझे अपने खाते का ईमेल बदलना है।", "label": "update_account"}
+{"id": "022", "text": "The headphones I received do not work.", "label": "product_issue"}
+{"id": "023", "text": "Box mein charger missing hai.", "label": "product_issue"}
+{"id": "024", "text": "मुझे गलत रंग का सामान मिला है।", "label": "product_issue"}
+{"id": "025", "text": "Delivery was due yesterday but the parcel has not arrived.", "label": "delivery_issue"}
+{"id": "026", "text": "Delivered dikha raha hai par parcel mila nahi.", "label": "delivery_issue"}
+{"id": "027", "text": "मेरा पैकेट गलत पते पर पहुँचा दिया गया है।", "label": "delivery_issue"}
+{"id": "028", "text": "Do you offer gift wrapping?", "label": "other"}
+{"id": "029", "text": "Kya aap international shipping karte ho?", "label": "other"}
+{"id": "030", "text": "क्या आपके पास नौकरी के अवसर हैं?", "label": "other"}
+{"id": "a001", "text": "Has order number DEMO123 been dispatched yet?", "label": "order_status"}
+{"id": "a002", "text": "Please share the tracking link for my purchase.", "label": "order_status"}
+{"id": "a003", "text": "My order shows processing. What stage is it at?", "label": "order_status"}
+{"id": "a004", "text": "Parcel abhi warehouse mein hai ya courier ke paas?", "label": "order_status"}
+{"id": "a005", "text": "Estimated arrival date kahan dekh sakta hoon?", "label": "order_status"}
+{"id": "a006", "text": "मेरी खरीदारी की अनुमानित डिलीवरी तारीख बताइए।", "label": "order_status"}
+{"id": "a007", "text": "ऑर्डर पैक हुआ है या अभी तैयारी चल रही है?", "label": "order_status"}
+{"id": "a008", "text": "I ordered the wrong quantity. Please cancel the entire purchase.", "label": "cancel_order"}
+{"id": "a009", "text": "Do not ship this order. I want it cancelled.", "label": "cancel_order"}
+{"id": "a010", "text": "I found the item locally and want to withdraw my online order.", "label": "cancel_order"}
+{"id": "a011", "text": "Dispatch se pehle meri booking radd kar do.", "label": "cancel_order"}
+{"id": "a012", "text": "Family ne mana kar diya, order aage process mat karo.", "label": "cancel_order"}
+{"id": "a013", "text": "गलती से खरीद लिया था, कृपया ऑर्डर रोककर रद्द करें।", "label": "cancel_order"}
+{"id": "a014", "text": "मुझे अब यह खरीदारी नहीं करनी है, इसे रद्द करें।", "label": "cancel_order"}
+{"id": "a015", "text": "You approved repayment yesterday. Has the refund been issued?", "label": "refund"}
+{"id": "a016", "text": "The item is faulty. I want my money returned, not an exchange.", "label": "refund"}
+{"id": "a017", "text": "My cancelled order still has no refund confirmation.", "label": "refund"}
+{"id": "a018", "text": "Return pickup ho chuka hai, refund ka reference number bhejo.", "label": "refund"}
+{"id": "a019", "text": "Duplicate charge ka paisa wapas chahiye.", "label": "refund"}
+{"id": "a020", "text": "रद्द किए गए ऑर्डर की राशि कब वापस मिलेगी?", "label": "refund"}
+{"id": "a021", "text": "मुझे नया सामान नहीं चाहिए, भुगतान की वापसी चाहिए।", "label": "refund"}
+{"id": "a022", "text": "Please arrange collection so I can return this item.", "label": "return_replace"}
+{"id": "a023", "text": "The screen arrived cracked. Send a replacement unit.", "label": "return_replace"}
+{"id": "a024", "text": "I received a medium shirt but need to exchange it for large.", "label": "return_replace"}
+{"id": "a025", "text": "Bottle leak kar rahi hai, nayi bottle se replace karo.", "label": "return_replace"}
+{"id": "a026", "text": "Is item ke liye return pickup book karna hai.", "label": "return_replace"}
+{"id": "a027", "text": "गलत मॉडल भेजा गया है, सही मॉडल से बदल दीजिए।", "label": "return_replace"}
+{"id": "a028", "text": "जूते बदलकर दूसरा आकार लेने की प्रक्रिया बताइए।", "label": "return_replace"}
+{"id": "a029", "text": "My card is rejected every time I try to pay.", "label": "payment_issue"}
+{"id": "a030", "text": "The payment gateway froze after I entered the verification code.", "label": "payment_issue"}
+{"id": "a031", "text": "The bank statement shows two charges for one transaction.", "label": "payment_issue"}
+{"id": "a032", "text": "Checkout par payment unsuccessful aa raha hai.", "label": "payment_issue"}
+{"id": "a033", "text": "UPI success hai lekin website payment pending bol rahi hai.", "label": "payment_issue"}
+{"id": "a034", "text": "भुगतान करते समय बार-बार तकनीकी त्रुटि आती है।", "label": "payment_issue"}
+{"id": "a035", "text": "बैंक से राशि कटने के बाद भी भुगतान असफल दिख रहा है।", "label": "payment_issue"}
+{"id": "a036", "text": "The password reset link has expired and I cannot sign in.", "label": "account_access"}
+{"id": "a037", "text": "My account was locked after several login attempts.", "label": "account_access"}
+{"id": "a038", "text": "The sign-in page keeps rejecting my verification code.", "label": "account_access"}
+{"id": "a039", "text": "Password bhool gaya hoon, account ka access kaise milega?", "label": "account_access"}
+{"id": "a040", "text": "Login code mangaya tha par SMS nahi aaya.", "label": "account_access"}
+{"id": "a041", "text": "सही जानकारी भरने पर भी खाते में प्रवेश नहीं हो रहा।", "label": "account_access"}
+{"id": "a042", "text": "पासवर्ड भूलने के कारण अपना खाता नहीं खोल पा रहा हूँ।", "label": "account_access"}
+{"id": "a043", "text": "I can sign in, but I need to change the phone number on my profile.", "label": "update_account"}
+{"id": "a044", "text": "Please correct the spelling of my account name.", "label": "update_account"}
+{"id": "a045", "text": "I know my current password and want to change it.", "label": "update_account"}
+{"id": "a046", "text": "Saved address mein flat number galat hai, edit karna hai.", "label": "update_account"}
+{"id": "a047", "text": "Current order office ki jagah ghar par bhejna hai, address badal do.", "label": "update_account"}
+{"id": "a048", "text": "मेरे खाते में दर्ज पुराना फोन नंबर बदल दीजिए।", "label": "update_account"}
+{"id": "a049", "text": "प्रोफाइल का नाम और सहेजा गया पता संशोधित करना है।", "label": "update_account"}
+{"id": "a050", "text": "The left earbud produces no sound.", "label": "product_issue"}
+{"id": "a051", "text": "The package contains only three pieces although the listing says four.", "label": "product_issue"}
+{"id": "a052", "text": "The appliance has a broken power switch.", "label": "product_issue"}
+{"id": "a053", "text": "Naye phone ki battery bahut jaldi khatam ho rahi hai.", "label": "product_issue"}
+{"id": "a054", "text": "Red bag mangaya tha lekin black bag mila.", "label": "product_issue"}
+{"id": "a055", "text": "डिब्बे में सामान का एक हिस्सा गायब है।", "label": "product_issue"}
+{"id": "a056", "text": "नई घड़ी की स्क्रीन चालू नहीं हो रही।", "label": "product_issue"}
+{"id": "a057", "text": "The courier attempted delivery at the wrong building.", "label": "delivery_issue"}
+{"id": "a058", "text": "Delivery was due three days ago and the parcel still has not arrived.", "label": "delivery_issue"}
+{"id": "a059", "text": "Tracking says delivery failed, but I was home all day.", "label": "delivery_issue"}
+{"id": "a060", "text": "Courier ne delivered mark kar diya par parcel mila hi nahi.", "label": "delivery_issue"}
+{"id": "a061", "text": "Delivery agent galat locality mein chala gaya.", "label": "delivery_issue"}
+{"id": "a062", "text": "निर्धारित तारीख बीत गई लेकिन सामान अभी तक नहीं पहुँचा।", "label": "delivery_issue"}
+{"id": "a063", "text": "घर पर मौजूद होने के बावजूद डिलीवरी असफल दर्ज की गई।", "label": "delivery_issue"}
+{"id": "a064", "text": "Do you sell wholesale to small shops?", "label": "other"}
+{"id": "a065", "text": "Where can I find your physical store opening hours?", "label": "other"}
+{"id": "a066", "text": "Can I join your affiliate programme?", "label": "other"}
+{"id": "a067", "text": "Agle festival sale ki date kya hai?", "label": "other"}
+{"id": "a068", "text": "Kya aap corporate gifting service dete ho?", "label": "other"}
+{"id": "a069", "text": "क्या आपके यहाँ उपहार कार्ड खरीद सकते हैं?", "label": "other"}
+{"id": "a070", "text": "आपकी दुकान रविवार को कितने बजे खुलती है?", "label": "other"}

@@ -1,0 +1,30 @@
+{"id":"v001","text":"The tracking page has not updated. Can you tell me the current shipment location?","label":"order_status"}
+{"id":"v002","text":"Aaj dispatch hua tha kya? Tracking details bata do.","label":"order_status"}
+{"id":"v003","text":"क्या मेरा सामान गोदाम से निकल चुका है?","label":"order_status"}
+{"id":"v004","text":"I placed this purchase by mistake. Stop the order before it ships.","label":"cancel_order"}
+{"id":"v005","text":"Same cheez galti se do baar order ki, doosra wala cancel karna hai.","label":"cancel_order"}
+{"id":"v006","text":"अभी भेजा नहीं है तो यह ऑर्डर रद्द कर दें।","label":"cancel_order"}
+{"id":"v007","text":"The return was collected last week. When will the money reach my bank?","label":"refund"}
+{"id":"v008","text":"Replacement nahi chahiye, mujhe payment wapas kar do.","label":"refund"}
+{"id":"v009","text":"वापसी स्वीकार हो गई है लेकिन पैसे खाते में नहीं आए।","label":"refund"}
+{"id":"v010","text":"You sent the wrong colour. Please exchange it for the blue version.","label":"return_replace"}
+{"id":"v011","text":"Shoes chhote hain, ek size bada pair bhej sakte ho?","label":"return_replace"}
+{"id":"v012","text":"यह सामान वापस भेजने की प्रक्रिया बताइए।","label":"return_replace"}
+{"id":"v013","text":"Checkout says the transaction failed, but my bank shows a debit.","label":"payment_issue"}
+{"id":"v014","text":"UPI transaction pending dikha raha hai aur checkout complete nahi ho raha.","label":"payment_issue"}
+{"id":"v015","text":"एक खरीदारी के लिए कार्ड से दो बार भुगतान कट गया।","label":"payment_issue"}
+{"id":"v016","text":"I forgot my password and cannot get into my profile.","label":"account_access"}
+{"id":"v017","text":"Sahi password dalne par bhi account locked bol raha hai.","label":"account_access"}
+{"id":"v018","text":"प्रवेश करने के लिए भेजा गया कोड काम नहीं कर रहा।","label":"account_access"}
+{"id":"v019","text":"Please change the delivery address on my current order to my office.","label":"update_account"}
+{"id":"v020","text":"Profile mein purana mobile number hai, naya number update karna hai.","label":"update_account"}
+{"id":"v021","text":"अपने खाते में दर्ज ईमेल पता बदलना चाहता हूँ।","label":"update_account"}
+{"id":"v022","text":"The kettle switches off after a few seconds even when the water is cold.","label":"product_issue"}
+{"id":"v023","text":"Box mein charging cable missing hai.","label":"product_issue"}
+{"id":"v024","text":"नया बैग मिला है लेकिन उसकी ज़िप टूटी हुई है।","label":"product_issue"}
+{"id":"v025","text":"The courier marked this delivered, but nobody at my address received it.","label":"delivery_issue"}
+{"id":"v026","text":"Delivery kal promised thi, ab do din late ho gaya.","label":"delivery_issue"}
+{"id":"v027","text":"पार्सल मेरे पते की जगह किसी दूसरे पते पर पहुँचा दिया गया।","label":"delivery_issue"}
+{"id":"v028","text":"Can you gift wrap a purchase for a birthday?","label":"other"}
+{"id":"v029","text":"Aapke store mein job openings hain kya?","label":"other"}
+{"id":"v030","text":"क्या आपके यहाँ छात्रों के लिए छूट मिलती है?","label":"other"}

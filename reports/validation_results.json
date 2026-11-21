@@ -1,0 +1,348 @@
+{
+  "split": "validation",
+  "source": "AI-generated development examples",
+  "example_count": 30,
+  "dataset_sha256": "19d510ee047c272503a876e848284d667dfe0ffb72dad32df6b664507188ad58",
+  "models": {
+    "tfidf_baseline": {
+      "accuracy": 0.6666666666666666,
+      "macro_f1": 0.63,
+      "per_class": {
+        "order_status": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1-score": 0.0,
+          "support": 3.0
+        },
+        "cancel_order": {
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1-score": 1.0,
+          "support": 3.0
+        },
+        "refund": {
+          "precision": 1.0,
+          "recall": 0.3333333333333333,
+          "f1-score": 0.5,
+          "support": 3.0
+        },
+        "return_replace": {
+          "precision": 0.6666666666666666,
+          "recall": 0.6666666666666666,
+          "f1-score": 0.6666666666666666,
+          "support": 3.0
+        },
+        "payment_issue": {
+          "precision": 0.6666666666666666,
+          "recall": 0.6666666666666666,
+          "f1-score": 0.6666666666666666,
+          "support": 3.0
+        },
+        "account_access": {
+          "precision": 0.75,
+          "recall": 1.0,
+          "f1-score": 0.8571428571428571,
+          "support": 3.0
+        },
+        "update_account": {
+          "precision": 0.5,
+          "recall": 1.0,
+          "f1-score": 0.6666666666666666,
+          "support": 3.0
+        },
+        "product_issue": {
+          "precision": 0.5,
+          "recall": 0.6666666666666666,
+          "f1-score": 0.5714285714285714,
+          "support": 3.0
+        },
+        "delivery_issue": {
+          "precision": 1.0,
+          "recall": 0.6666666666666666,
+          "f1-score": 0.8,
+          "support": 3.0
+        },
+        "other": {
+          "precision": 0.5,
+          "recall": 0.6666666666666666,
+          "f1-score": 0.5714285714285714,
+          "support": 3.0
+        },
+        "accuracy": 0.6666666666666666,
+        "macro avg": {
+          "precision": 0.6583333333333333,
+          "recall": 0.6666666666666667,
+          "f1-score": 0.63,
+          "support": 30.0
+        },
+        "weighted avg": {
+          "precision": 0.6583333333333333,
+          "recall": 0.6666666666666666,
+          "f1-score": 0.63,
+          "support": 30.0
+        }
+      }
+    },
+    "lora_seed_debug": {
+      "accuracy": 0.5333333333333333,
+      "macro_f1": 0.5011255411255411,
+      "per_class": {
+        "order_status": {
+          "precision": 0.75,
+          "recall": 1.0,
+          "f1-score": 0.8571428571428571,
+          "support": 3.0
+        },
+        "cancel_order": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1-score": 0.0,
+          "support": 3.0
+        },
+        "refund": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1-score": 0.0,
+          "support": 3.0
+        },
+        "return_replace": {
+          "precision": 0.25,
+          "recall": 0.6666666666666666,
+          "f1-score": 0.36363636363636365,
+          "support": 3.0
+        },
+        "payment_issue": {
+          "precision": 0.4,
+          "recall": 0.6666666666666666,
+          "f1-score": 0.5,
+          "support": 3.0
+        },
+        "account_access": {
+          "precision": 0.75,
+          "recall": 1.0,
+          "f1-score": 0.8571428571428571,
+          "support": 3.0
+        },
+        "update_account": {
+          "precision": 1.0,
+          "recall": 0.6666666666666666,
+          "f1-score": 0.8,
+          "support": 3.0
+        },
+        "product_issue": {
+          "precision": 1.0,
+          "recall": 0.3333333333333333,
+          "f1-score": 0.5,
+          "support": 3.0
+        },
+        "delivery_issue": {
+          "precision": 0.3333333333333333,
+          "recall": 0.3333333333333333,
+          "f1-score": 0.3333333333333333,
+          "support": 3.0
+        },
+        "other": {
+          "precision": 1.0,
+          "recall": 0.6666666666666666,
+          "f1-score": 0.8,
+          "support": 3.0
+        },
+        "accuracy": 0.5333333333333333,
+        "macro avg": {
+          "precision": 0.5483333333333333,
+          "recall": 0.5333333333333333,
+          "f1-score": 0.5011255411255411,
+          "support": 30.0
+        },
+        "weighted avg": {
+          "precision": 0.5483333333333333,
+          "recall": 0.5333333333333333,
+          "f1-score": 0.5011255411255412,
+          "support": 30.0
+        }
+      }
+    }
+  },
+  "predictions": [
+    {
+      "id": "v001",
+      "expected": "order_status",
+      "baseline": "other",
+      "lora": "order_status"
+    },
+    {
+      "id": "v002",
+      "expected": "order_status",
+      "baseline": "payment_issue",
+      "lora": "order_status"
+    },
+    {
+      "id": "v003",
+      "expected": "order_status",
+      "baseline": "product_issue",
+      "lora": "order_status"
+    },
+    {
+      "id": "v004",
+      "expected": "cancel_order",
+      "baseline": "cancel_order",
+      "lora": "return_replace"
+    },
+    {
+      "id": "v005",
+      "expected": "cancel_order",
+      "baseline": "cancel_order",
+      "lora": "return_replace"
+    },
+    {
+      "id": "v006",
+      "expected": "cancel_order",
+      "baseline": "cancel_order",
+      "lora": "payment_issue"
+    },
+    {
+      "id": "v007",
+      "expected": "refund",
+      "baseline": "return_replace",
+      "lora": "delivery_issue"
+    },
+    {
+      "id": "v008",
+      "expected": "refund",
+      "baseline": "refund",
+      "lora": "payment_issue"
+    },
+    {
+      "id": "v009",
+      "expected": "refund",
+      "baseline": "account_access",
+      "lora": "payment_issue"
+    },
+    {
+      "id": "v010",
+      "expected": "return_replace",
+      "baseline": "return_replace",
+      "lora": "return_replace"
+    },
+    {
+      "id": "v011",
+      "expected": "return_replace",
+      "baseline": "other",
+      "lora": "order_status"
+    },
+    {
+      "id": "v012",
+      "expected": "return_replace",
+      "baseline": "return_replace",
+      "lora": "return_replace"
+    },
+    {
+      "id": "v013",
+      "expected": "payment_issue",
+      "baseline": "update_account",
+      "lora": "return_replace"
+    },
+    {
+      "id": "v014",
+      "expected": "payment_issue",
+      "baseline": "payment_issue",
+      "lora": "payment_issue"
+    },
+    {
+      "id": "v015",
+      "expected": "payment_issue",
+      "baseline": "payment_issue",
+      "lora": "payment_issue"
+    },
+    {
+      "id": "v016",
+      "expected": "account_access",
+      "baseline": "account_access",
+      "lora": "account_access"
+    },
+    {
+      "id": "v017",
+      "expected": "account_access",
+      "baseline": "account_access",
+      "lora": "account_access"
+    },
+    {
+      "id": "v018",
+      "expected": "account_access",
+      "baseline": "account_access",
+      "lora": "account_access"
+    },
+    {
+      "id": "v019",
+      "expected": "update_account",
+      "baseline": "update_account",
+      "lora": "update_account"
+    },
+    {
+      "id": "v020",
+      "expected": "update_account",
+      "baseline": "update_account",
+      "lora": "account_access"
+    },
+    {
+      "id": "v021",
+      "expected": "update_account",
+      "baseline": "update_account",
+      "lora": "update_account"
+    },
+    {
+      "id": "v022",
+      "expected": "product_issue",
+      "baseline": "update_account",
+      "lora": "return_replace"
+    },
+    {
+      "id": "v023",
+      "expected": "product_issue",
+      "baseline": "product_issue",
+      "lora": "product_issue"
+    },
+    {
+      "id": "v024",
+      "expected": "product_issue",
+      "baseline": "product_issue",
+      "lora": "delivery_issue"
+    },
+    {
+      "id": "v025",
+      "expected": "delivery_issue",
+      "baseline": "update_account",
+      "lora": "return_replace"
+    },
+    {
+      "id": "v026",
+      "expected": "delivery_issue",
+      "baseline": "delivery_issue",
+      "lora": "return_replace"
+    },
+    {
+      "id": "v027",
+      "expected": "delivery_issue",
+      "baseline": "delivery_issue",
+      "lora": "delivery_issue"
+    },
+    {
+      "id": "v028",
+      "expected": "other",
+      "baseline": "other",
+      "lora": "other"
+    },
+    {
+      "id": "v029",
+      "expected": "other",
+      "baseline": "product_issue",
+      "lora": "other"
+    },
+    {
+      "id": "v030",
+      "expected": "other",
+      "baseline": "other",
+      "lora": "refund"
+    }
+  ]
+}
