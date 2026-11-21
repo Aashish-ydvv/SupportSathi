@@ -1,0 +1,30 @@
+# Python environment and generated files
+.venv/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.ipynb_checkpoints/
+
+# Local credentials
+.env
+.env.*
+!.env.example
+
+# Local datasets and model artifacts
+data/raw/
+data/processed/
+data/train.jsonl
+data/validation.jsonl
+data/test.jsonl
+models/
+checkpoints/
+*.safetensors
+*.pt
+*.pth
+*.bin
+
+# Local logs and editor settings
+logs/
+*.log
+.vscode/
+Thumbs.db
