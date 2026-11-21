@@ -1,5 +1,5 @@
 {
-  "passed": 12,
+  "passed": 8,
   "total": 12,
   "checks": [
     {
@@ -53,26 +53,30 @@
     {
       "name": "Baseline prediction",
       "expected_status": 200,
-      "passed": true,
-      "actual_status": 200
+      "passed": false,
+      "actual_status": 200,
+      "response": "{\"intent\":\"cancel_order\",\"model_version\":\"retail-tfidf-public-v1\",\"latency_ms\":1.67}"
     },
     {
       "name": "LoRA prediction",
       "expected_status": 200,
-      "passed": true,
-      "actual_status": 200
+      "passed": false,
+      "actual_status": 200,
+      "response": "{\"intent\":\"cancel_order\",\"model_version\":\"retail-minilm-lora-public-v1\",\"latency_ms\":34.17}"
     },
     {
       "name": "Hindi message",
       "expected_status": 200,
-      "passed": true,
-      "actual_status": 200
+      "passed": false,
+      "actual_status": 200,
+      "response": "{\"intent\":\"track_order\",\"model_version\":\"retail-minilm-lora-public-v1\",\"latency_ms\":32.61}"
     },
     {
       "name": "Instruction-like input stays within label set",
       "expected_status": 200,
-      "passed": true,
-      "actual_status": 200
+      "passed": false,
+      "actual_status": 200,
+      "response": "{\"intent\":\"product_availability\",\"model_version\":\"retail-minilm-lora-public-v1\",\"latency_ms\":33.93}"
     }
   ]
 }

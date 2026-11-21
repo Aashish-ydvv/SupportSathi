@@ -1,6 +1,5 @@
 import hashlib
 import json
-from collections import Counter
 from pathlib import Path
 
 import joblib
@@ -9,6 +8,7 @@ from peft import PeftModel
 from sklearn.metrics import (
     accuracy_score,
     classification_report,
+    confusion_matrix,
     f1_score,
 )
 from transformers import (
@@ -17,33 +17,31 @@ from transformers import (
 )
 
 ROOT = Path(__file__).resolve().parents[1]
-ADAPTER_DIR = ROOT / "models/lora_v2"
+DATA_DIR = ROOT / "data/processed/retail_public_v1"
+MODEL_DIR = ROOT / "models/retail_public_v1"
+ADAPTER_DIR = MODEL_DIR / "lora"
 
 
-def read_jsonl(path):
-    return [
-        json.loads(line)
-        for line in path.read_text(encoding="utf-8-sig").splitlines()
-        if line.strip()
-    ]
+def read_json(path):
+    return json.loads(path.read_text(encoding="utf-8-sig"))
 
 
-def normalize(text):
-    return " ".join(text.casefold().split())
+def file_hash(path):
+    return hashlib.sha256(path.read_bytes()).hexdigest()
 
 
 def summarize(name, examples, predictions, labels):
     expected = [example["label"] for example in examples]
 
-    result = {
-        "accuracy": accuracy_score(expected, predictions),
-        "macro_f1": f1_score(
+    metrics = {
+        "accuracy": float(accuracy_score(expected, predictions)),
+        "macro_f1": float(f1_score(
             expected,
             predictions,
             labels=labels,
             average="macro",
             zero_division=0,
-        ),
+        )),
         "per_class": classification_report(
             expected,
             predictions,
@@ -51,179 +49,139 @@ def summarize(name, examples, predictions, labels):
             output_dict=True,
             zero_division=0,
         ),
+        "confusion_matrix": confusion_matrix(
+            expected, predictions, labels=labels
+        ).tolist(),
+        "confusion_matrix_labels": labels,
     }
 
+    mistakes = [
+        {
+            "id": example["id"],
+            "expected": example["label"],
+            "predicted": prediction,
+        }
+        for example, prediction in zip(examples, predictions)
+        if prediction != example["label"]
+    ]
+
     print(f"\n{name}")
-    print(f"Accuracy: {result['accuracy']:.2%}")
-    print(f"Macro-F1: {result['macro_f1']:.4f}")
-    print("Mistakes:")
+    print(f"Accuracy: {metrics['accuracy']:.2%}")
+    print(f"Macro-F1: {metrics['macro_f1']:.4f}")
+    print(f"Mistakes: {len(mistakes)}/{len(examples)}")
 
-    mistakes = []
+    for mistake in mistakes:
+        print(
+            f"  {mistake['id']}: expected={mistake['expected']}, "
+            f"predicted={mistake['predicted']}"
+        )
 
-    for example, prediction in zip(examples, predictions):
-        if prediction != example["label"]:
-            mistakes.append({
-                "id": example["id"],
-                "expected": example["label"],
-                "predicted": prediction,
-            })
-            print(
-                f"  {example['id']}: expected={example['label']}, "
-                f"predicted={prediction}"
-            )
-
-    if not mistakes:
-        print("  None")
-
-    result["mistakes"] = mistakes
-    return result
+    metrics["mistakes"] = mistakes
+    return metrics
 
 
 def main():
-    if not torch.cuda.is_available():
-        raise RuntimeError("CUDA is unavailable.")
+    manifest = read_json(DATA_DIR / "manifest.json")
+    baseline_metadata = read_json(MODEL_DIR / "baseline_metadata.json")
+    lora_metadata = read_json(ADAPTER_DIR / "training_metadata.json")
+    labels = lora_metadata["labels"]
 
-    metadata_path = ADAPTER_DIR / "training_metadata.json"
-    metadata = json.loads(metadata_path.read_text(encoding="utf-8"))
-    labels = metadata["labels"]
+    if set(labels) != set(manifest["labels"]):
+        raise ValueError("LoRA labels do not match the dataset.")
+    if set(labels) != set(baseline_metadata["labels"]):
+        raise ValueError("Baseline and LoRA labels differ.")
 
-    training_path = ROOT / "data/processed/train_v2.jsonl"
-    validation_path = ROOT / "data/processed/validation.jsonl"
+    training_hash = file_hash(DATA_DIR / "train.jsonl")
+    validation_path = DATA_DIR / "validation.jsonl"
+    validation_hash = file_hash(validation_path)
 
-    training_hash = hashlib.sha256(
-        training_path.read_bytes()
-    ).hexdigest()
+    for metadata in [baseline_metadata, lora_metadata]:
+        if metadata["training_sha256"] != training_hash:
+            raise ValueError("A model used a different training file.")
 
-    saved_training_hash = metadata.get("dataset_sha256")
-    if saved_training_hash is not None:
-        if training_hash != saved_training_hash:
-            raise ValueError(
-                "Training data changed after this model was trained."
-            )
-    else:
-        print(
-            "No training-data hash was saved during training. "
-            "The current file hash will be recorded in this report."
-        )
+    if training_hash != manifest["splits"]["train"]["sha256"]:
+        raise ValueError("Training data differs from the manifest.")
+    if validation_hash != manifest["splits"]["validation"]["sha256"]:
+        raise ValueError("Validation data differs from the manifest.")
+    if validation_hash != lora_metadata["validation_sha256"]:
+        raise ValueError("Validation data changed since LoRA training.")
 
-    examples = read_jsonl(validation_path)
-    training = read_jsonl(training_path)
-
+    examples = [
+        json.loads(line)
+        for line in validation_path.read_text(encoding="utf-8").splitlines()
+        if line.strip()
+    ]
     if not examples:
         raise ValueError("Validation data is empty.")
 
-    training_texts = {
-        normalize(example["text"])
-        for example in training
-    }
-    seen_ids = set()
-    seen_texts = set()
-
-    for example in examples:
-        example_id = example["id"]
-        text = example["text"]
-        label = example["label"]
-
-        if not isinstance(example_id, str) or not example_id.strip():
-            raise ValueError("Every validation example needs a string ID.")
-
-        if not isinstance(text, str) or not text.strip():
-            raise ValueError(f"Invalid text: {example_id}")
-
-        if label not in labels:
-            raise ValueError(f"Unknown label: {label}")
-
-        normalized_text = normalize(text)
-
-        if example_id in seen_ids:
-            raise ValueError(f"Duplicate validation ID: {example_id}")
-
-        if normalized_text in seen_texts:
-            raise ValueError(f"Duplicate validation text: {example_id}")
-
-        if normalized_text in training_texts:
-            raise ValueError(
-                f"Training/validation text overlap: {example_id}"
-            )
-
-        seen_ids.add(example_id)
-        seen_texts.add(normalized_text)
-
-    counts = Counter(example["label"] for example in examples)
-    missing = set(labels) - counts.keys()
-
-    if missing:
-        raise ValueError(
-            f"Missing validation categories: {sorted(missing)}"
-        )
-
     texts = [example["text"] for example in examples]
 
-    baseline_path = ROOT / "models/baseline_v2.joblib"
-    baseline = joblib.load(baseline_path)
+    baseline = joblib.load(MODEL_DIR / "baseline.joblib")
     baseline_predictions = baseline.predict(texts).tolist()
 
     tokenizer = XLMRobertaTokenizer.from_pretrained(ADAPTER_DIR)
-
     base_model = AutoModelForSequenceClassification.from_pretrained(
-        metadata["base_model"],
-        revision=metadata.get("base_revision"),
+        lora_metadata["base_model"],
+        revision=lora_metadata.get("base_revision"),
         num_labels=len(labels),
         id2label=dict(enumerate(labels)),
         label2id={
-            label: index
-            for index, label in enumerate(labels)
+            label: index for index, label in enumerate(labels)
         },
         attn_implementation="eager",
     )
-
     model = PeftModel.from_pretrained(base_model, ADAPTER_DIR)
-    model.to("cuda")
+
+    device = "cuda" if torch.cuda.is_available() else "cpu"
+    model.to(device)
     model.eval()
 
     lora_predictions = []
+    batch_size = 4
 
     with torch.inference_mode():
-        for text in texts:
+        for start in range(0, len(texts), batch_size):
             inputs = tokenizer(
-                text,
+                texts[start:start + batch_size],
+                padding=True,
                 truncation=True,
-                max_length=128,
+                max_length=lora_metadata["max_length"],
                 return_tensors="pt",
             )
             inputs = {
-                key: value.to("cuda")
+                key: value.to(device)
                 for key, value in inputs.items()
             }
-
-            logits = model(**inputs).logits
-            predicted_id = logits.argmax(dim=-1).item()
-            lora_predictions.append(labels[predicted_id])
-
-    baseline_results = summarize(
-        "tfidf_baseline_v2",
-        examples,
-        baseline_predictions,
-        labels,
-    )
-    lora_results = summarize(
-        "lora_v2",
-        examples,
-        lora_predictions,
-        labels,
-    )
+            predicted_ids = (
+                model(**inputs).logits.argmax(dim=-1).cpu().tolist()
+            )
+            lora_predictions.extend(
+                labels[index] for index in predicted_ids
+            )
 
     results = {
-        "split": "development_validation",
-        "validation_examples": len(examples),
-        "training_examples": len(training),
+        "split": "validation",
+        "dataset_id": manifest["dataset_id"],
+        "dataset_revision": manifest["revision"],
+        "training_examples": baseline_metadata["training_examples"],
+        "evaluation_examples": len(examples),
         "training_sha256": training_hash,
-        "training_hash_verified": saved_training_hash is not None,
-        "validation_sha256": hashlib.sha256(
-            validation_path.read_bytes()
-        ).hexdigest(),
-        "tfidf_baseline_v2": baseline_results,
-        "lora_v2": lora_results,
+        "evaluation_sha256": validation_hash,
+        "lora_selected_epoch": lora_metadata["best_epoch"],
+        "models": {
+            "baseline": summarize(
+                baseline_metadata["model_version"],
+                examples,
+                baseline_predictions,
+                labels,
+            ),
+            "lora": summarize(
+                lora_metadata["model_version"],
+                examples,
+                lora_predictions,
+                labels,
+            ),
+        },
         "predictions": [
             {
                 "id": example["id"],
@@ -232,25 +190,20 @@ def main():
                 "lora": lora_prediction,
             }
             for example, baseline_prediction, lora_prediction in zip(
-                examples,
-                baseline_predictions,
-                lora_predictions,
+                examples, baseline_predictions, lora_predictions
             )
         ],
     }
 
-    output_path = ROOT / "reports/validation_v2.json"
+    output_path = ROOT / "reports/public_validation.json"
     output_path.parent.mkdir(parents=True, exist_ok=True)
     output_path.write_text(
         json.dumps(results, indent=2, ensure_ascii=False),
         encoding="utf-8",
     )
 
-    print(f"\nSaved results: {output_path}")
-    print(
-        "Development validation only; "
-        "not final-test or real-world accuracy."
-    )
+    print(f"\nSaved report: {output_path}")
+    print("Validation results only. Final test set remains unevaluated.")
 
 
 if __name__ == "__main__":

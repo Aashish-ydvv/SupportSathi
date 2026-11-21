@@ -1,0 +1,2454 @@
+{
+  "split": "validation",
+  "dataset_id": "Hari5115/hinglish-retail-intent-dataset",
+  "dataset_revision": "3b4ab333bfeab463c9407911e958a5e6af6199ac",
+  "training_examples": 2036,
+  "evaluation_examples": 278,
+  "training_sha256": "a94fd0bdf9d4a3f0890ad22e6aba627ebe5ae11760be3a4121702544a7038e75",
+  "evaluation_sha256": "8b31bcfba78f758d01714c1eb96d280ebe68b2ab9dfc1822ef42bd3279a44eba",
+  "lora_selected_epoch": 8,
+  "models": {
+    "baseline": {
+      "accuracy": 0.9568345323741008,
+      "macro_f1": 0.9585625460714859,
+      "per_class": {
+        "cancel_order": {
+          "precision": 0.9523809523809523,
+          "recall": 1.0,
+          "f1-score": 0.975609756097561,
+          "support": 20.0
+        },
+        "damaged_item": {
+          "precision": 0.9545454545454546,
+          "recall": 0.9545454545454546,
+          "f1-score": 0.9545454545454546,
+          "support": 22.0
+        },
+        "delivery_complaint": {
+          "precision": 0.8695652173913043,
+          "recall": 0.8695652173913043,
+          "f1-score": 0.8695652173913043,
+          "support": 23.0
+        },
+        "discount_query": {
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1-score": 1.0,
+          "support": 21.0
+        },
+        "exchange_product": {
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1-score": 1.0,
+          "support": 22.0
+        },
+        "other": {
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1-score": 1.0,
+          "support": 18.0
+        },
+        "payment_issue": {
+          "precision": 1.0,
+          "recall": 0.9545454545454546,
+          "f1-score": 0.9767441860465116,
+          "support": 22.0
+        },
+        "product_availability": {
+          "precision": 1.0,
+          "recall": 0.9130434782608695,
+          "f1-score": 0.9545454545454546,
+          "support": 23.0
+        },
+        "product_information": {
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1-score": 1.0,
+          "support": 19.0
+        },
+        "refund_status": {
+          "precision": 1.0,
+          "recall": 0.9565217391304348,
+          "f1-score": 0.9777777777777777,
+          "support": 23.0
+        },
+        "return_request": {
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1-score": 1.0,
+          "support": 22.0
+        },
+        "track_order": {
+          "precision": 0.8260869565217391,
+          "recall": 0.9047619047619048,
+          "f1-score": 0.8636363636363636,
+          "support": 21.0
+        },
+        "wrong_item": {
+          "precision": 0.8695652173913043,
+          "recall": 0.9090909090909091,
+          "f1-score": 0.8888888888888888,
+          "support": 22.0
+        },
+        "accuracy": 0.9568345323741008,
+        "macro avg": {
+          "precision": 0.959395676786981,
+          "recall": 0.9586210890558716,
+          "f1-score": 0.9585625460714859,
+          "support": 278.0
+        },
+        "weighted avg": {
+          "precision": 0.9587261867524615,
+          "recall": 0.9568345323741008,
+          "f1-score": 0.9573234559364316,
+          "support": 278.0
+        }
+      },
+      "confusion_matrix": [
+        [
+          20,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          21,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          1
+        ],
+        [
+          0,
+          0,
+          20,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          2,
+          1
+        ],
+        [
+          0,
+          0,
+          0,
+          21,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          22,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          18,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          21,
+          0,
+          0,
+          0,
+          0,
+          0,
+          1
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          21,
+          0,
+          0,
+          0,
+          2,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          19,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          22,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          22,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          2,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          19,
+          0
+        ],
+        [
+          0,
+          1,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          20
+        ]
+      ],
+      "confusion_matrix_labels": [
+        "cancel_order",
+        "damaged_item",
+        "delivery_complaint",
+        "discount_query",
+        "exchange_product",
+        "other",
+        "payment_issue",
+        "product_availability",
+        "product_information",
+        "refund_status",
+        "return_request",
+        "track_order",
+        "wrong_item"
+      ],
+      "mistakes": [
+        {
+          "id": "retail_validation_00031",
+          "expected": "track_order",
+          "predicted": "delivery_complaint"
+        },
+        {
+          "id": "retail_validation_00069",
+          "expected": "delivery_complaint",
+          "predicted": "track_order"
+        },
+        {
+          "id": "retail_validation_00119",
+          "expected": "wrong_item",
+          "predicted": "delivery_complaint"
+        },
+        {
+          "id": "retail_validation_00157",
+          "expected": "product_availability",
+          "predicted": "track_order"
+        },
+        {
+          "id": "retail_validation_00166",
+          "expected": "track_order",
+          "predicted": "delivery_complaint"
+        },
+        {
+          "id": "retail_validation_00178",
+          "expected": "delivery_complaint",
+          "predicted": "wrong_item"
+        },
+        {
+          "id": "retail_validation_00204",
+          "expected": "product_availability",
+          "predicted": "track_order"
+        },
+        {
+          "id": "retail_validation_00220",
+          "expected": "delivery_complaint",
+          "predicted": "track_order"
+        },
+        {
+          "id": "retail_validation_00248",
+          "expected": "wrong_item",
+          "predicted": "damaged_item"
+        },
+        {
+          "id": "retail_validation_00254",
+          "expected": "damaged_item",
+          "predicted": "wrong_item"
+        },
+        {
+          "id": "retail_validation_00272",
+          "expected": "refund_status",
+          "predicted": "cancel_order"
+        },
+        {
+          "id": "retail_validation_00283",
+          "expected": "payment_issue",
+          "predicted": "wrong_item"
+        }
+      ]
+    },
+    "lora": {
+      "accuracy": 0.935251798561151,
+      "macro_f1": 0.9359598166642493,
+      "per_class": {
+        "cancel_order": {
+          "precision": 0.9090909090909091,
+          "recall": 1.0,
+          "f1-score": 0.9523809523809523,
+          "support": 20.0
+        },
+        "damaged_item": {
+          "precision": 0.9090909090909091,
+          "recall": 0.9090909090909091,
+          "f1-score": 0.9090909090909091,
+          "support": 22.0
+        },
+        "delivery_complaint": {
+          "precision": 0.8421052631578947,
+          "recall": 0.6956521739130435,
+          "f1-score": 0.7619047619047619,
+          "support": 23.0
+        },
+        "discount_query": {
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1-score": 1.0,
+          "support": 21.0
+        },
+        "exchange_product": {
+          "precision": 0.9565217391304348,
+          "recall": 1.0,
+          "f1-score": 0.9777777777777777,
+          "support": 22.0
+        },
+        "other": {
+          "precision": 0.9473684210526315,
+          "recall": 1.0,
+          "f1-score": 0.972972972972973,
+          "support": 18.0
+        },
+        "payment_issue": {
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1-score": 1.0,
+          "support": 22.0
+        },
+        "product_availability": {
+          "precision": 1.0,
+          "recall": 0.9565217391304348,
+          "f1-score": 0.9777777777777777,
+          "support": 23.0
+        },
+        "product_information": {
+          "precision": 0.9047619047619048,
+          "recall": 1.0,
+          "f1-score": 0.95,
+          "support": 19.0
+        },
+        "refund_status": {
+          "precision": 1.0,
+          "recall": 0.8695652173913043,
+          "f1-score": 0.9302325581395349,
+          "support": 23.0
+        },
+        "return_request": {
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1-score": 1.0,
+          "support": 22.0
+        },
+        "track_order": {
+          "precision": 0.95,
+          "recall": 0.9047619047619048,
+          "f1-score": 0.926829268292683,
+          "support": 21.0
+        },
+        "wrong_item": {
+          "precision": 0.76,
+          "recall": 0.8636363636363636,
+          "f1-score": 0.8085106382978723,
+          "support": 22.0
+        },
+        "accuracy": 0.935251798561151,
+        "macro avg": {
+          "precision": 0.9368414727911295,
+          "recall": 0.9384021775326123,
+          "f1-score": 0.9359598166642493,
+          "support": 278.0
+        },
+        "weighted avg": {
+          "precision": 0.9370749110242548,
+          "recall": 0.935251798561151,
+          "f1-score": 0.934463811506658,
+          "support": 278.0
+        }
+      },
+      "confusion_matrix": [
+        [
+          20,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          20,
+          0,
+          0,
+          1,
+          0,
+          0,
+          0,
+          1,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          16,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          1,
+          6
+        ],
+        [
+          0,
+          0,
+          0,
+          21,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          22,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          18,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          22,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          22,
+          1,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          19,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          2,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          20,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          22,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          2,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          19,
+          0
+        ],
+        [
+          0,
+          1,
+          1,
+          0,
+          0,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          19
+        ]
+      ],
+      "confusion_matrix_labels": [
+        "cancel_order",
+        "damaged_item",
+        "delivery_complaint",
+        "discount_query",
+        "exchange_product",
+        "other",
+        "payment_issue",
+        "product_availability",
+        "product_information",
+        "refund_status",
+        "return_request",
+        "track_order",
+        "wrong_item"
+      ],
+      "mistakes": [
+        {
+          "id": "retail_validation_00012",
+          "expected": "wrong_item",
+          "predicted": "other"
+        },
+        {
+          "id": "retail_validation_00031",
+          "expected": "track_order",
+          "predicted": "delivery_complaint"
+        },
+        {
+          "id": "retail_validation_00037",
+          "expected": "damaged_item",
+          "predicted": "exchange_product"
+        },
+        {
+          "id": "retail_validation_00045",
+          "expected": "refund_status",
+          "predicted": "cancel_order"
+        },
+        {
+          "id": "retail_validation_00069",
+          "expected": "delivery_complaint",
+          "predicted": "wrong_item"
+        },
+        {
+          "id": "retail_validation_00075",
+          "expected": "delivery_complaint",
+          "predicted": "track_order"
+        },
+        {
+          "id": "retail_validation_00117",
+          "expected": "refund_status",
+          "predicted": "damaged_item"
+        },
+        {
+          "id": "retail_validation_00119",
+          "expected": "wrong_item",
+          "predicted": "delivery_complaint"
+        },
+        {
+          "id": "retail_validation_00133",
+          "expected": "damaged_item",
+          "predicted": "product_information"
+        },
+        {
+          "id": "retail_validation_00136",
+          "expected": "delivery_complaint",
+          "predicted": "wrong_item"
+        },
+        {
+          "id": "retail_validation_00166",
+          "expected": "track_order",
+          "predicted": "delivery_complaint"
+        },
+        {
+          "id": "retail_validation_00178",
+          "expected": "delivery_complaint",
+          "predicted": "wrong_item"
+        },
+        {
+          "id": "retail_validation_00184",
+          "expected": "delivery_complaint",
+          "predicted": "wrong_item"
+        },
+        {
+          "id": "retail_validation_00220",
+          "expected": "delivery_complaint",
+          "predicted": "wrong_item"
+        },
+        {
+          "id": "retail_validation_00248",
+          "expected": "wrong_item",
+          "predicted": "damaged_item"
+        },
+        {
+          "id": "retail_validation_00261",
+          "expected": "product_availability",
+          "predicted": "product_information"
+        },
+        {
+          "id": "retail_validation_00272",
+          "expected": "refund_status",
+          "predicted": "cancel_order"
+        },
+        {
+          "id": "retail_validation_00282",
+          "expected": "delivery_complaint",
+          "predicted": "wrong_item"
+        }
+      ]
+    }
+  },
+  "predictions": [
+    {
+      "id": "retail_validation_00000",
+      "expected": "discount_query",
+      "baseline": "discount_query",
+      "lora": "discount_query"
+    },
+    {
+      "id": "retail_validation_00001",
+      "expected": "exchange_product",
+      "baseline": "exchange_product",
+      "lora": "exchange_product"
+    },
+    {
+      "id": "retail_validation_00002",
+      "expected": "return_request",
+      "baseline": "return_request",
+      "lora": "return_request"
+    },
+    {
+      "id": "retail_validation_00003",
+      "expected": "wrong_item",
+      "baseline": "wrong_item",
+      "lora": "wrong_item"
+    },
+    {
+      "id": "retail_validation_00004",
+      "expected": "product_availability",
+      "baseline": "product_availability",
+      "lora": "product_availability"
+    },
+    {
+      "id": "retail_validation_00005",
+      "expected": "refund_status",
+      "baseline": "refund_status",
+      "lora": "refund_status"
+    },
+    {
+      "id": "retail_validation_00006",
+      "expected": "wrong_item",
+      "baseline": "wrong_item",
+      "lora": "wrong_item"
+    },
+    {
+      "id": "retail_validation_00007",
+      "expected": "track_order",
+      "baseline": "track_order",
+      "lora": "track_order"
+    },
+    {
+      "id": "retail_validation_00008",
+      "expected": "product_information",
+      "baseline": "product_information",
+      "lora": "product_information"
+    },
+    {
+      "id": "retail_validation_00009",
+      "expected": "payment_issue",
+      "baseline": "payment_issue",
+      "lora": "payment_issue"
+    },
+    {
+      "id": "retail_validation_00010",
+      "expected": "cancel_order",
+      "baseline": "cancel_order",
+      "lora": "cancel_order"
+    },
+    {
+      "id": "retail_validation_00011",
+      "expected": "other",
+      "baseline": "other",
+      "lora": "other"
+    },
+    {
+      "id": "retail_validation_00012",
+      "expected": "wrong_item",
+      "baseline": "wrong_item",
+      "lora": "other"
+    },
+    {
+      "id": "retail_validation_00013",
+      "expected": "return_request",
+      "baseline": "return_request",
+      "lora": "return_request"
+    },
+    {
+      "id": "retail_validation_00014",
+      "expected": "product_availability",
+      "baseline": "product_availability",
+      "lora": "product_availability"
+    },
+    {
+      "id": "retail_validation_00015",
+      "expected": "track_order",
+      "baseline": "track_order",
+      "lora": "track_order"
+    },
+    {
+      "id": "retail_validation_00016",
+      "expected": "wrong_item",
+      "baseline": "wrong_item",
+      "lora": "wrong_item"
+    },
+    {
+      "id": "retail_validation_00017",
+      "expected": "other",
+      "baseline": "other",
+      "lora": "other"
+    },
+    {
+      "id": "retail_validation_00018",
+      "expected": "wrong_item",
+      "baseline": "wrong_item",
+      "lora": "wrong_item"
+    },
+    {
+      "id": "retail_validation_00019",
+      "expected": "discount_query",
+      "baseline": "discount_query",
+      "lora": "discount_query"
+    },
+    {
+      "id": "retail_validation_00020",
+      "expected": "discount_query",
+      "baseline": "discount_query",
+      "lora": "discount_query"
+    },
+    {
+      "id": "retail_validation_00021",
+      "expected": "damaged_item",
+      "baseline": "damaged_item",
+      "lora": "damaged_item"
+    },
+    {
+      "id": "retail_validation_00022",
+      "expected": "product_availability",
+      "baseline": "product_availability",
+      "lora": "product_availability"
+    },
+    {
+      "id": "retail_validation_00023",
+      "expected": "refund_status",
+      "baseline": "refund_status",
+      "lora": "refund_status"
+    },
+    {
+      "id": "retail_validation_00024",
+      "expected": "exchange_product",
+      "baseline": "exchange_product",
+      "lora": "exchange_product"
+    },
+    {
+      "id": "retail_validation_00025",
+      "expected": "cancel_order",
+      "baseline": "cancel_order",
+      "lora": "cancel_order"
+    },
+    {
+      "id": "retail_validation_00026",
+      "expected": "refund_status",
+      "baseline": "refund_status",
+      "lora": "refund_status"
+    },
+    {
+      "id": "retail_validation_00027",
+      "expected": "return_request",
+      "baseline": "return_request",
+      "lora": "return_request"
+    },
+    {
+      "id": "retail_validation_00028",
+      "expected": "wrong_item",
+      "baseline": "wrong_item",
+      "lora": "wrong_item"
+    },
+    {
+      "id": "retail_validation_00029",
+      "expected": "product_information",
+      "baseline": "product_information",
+      "lora": "product_information"
+    },
+    {
+      "id": "retail_validation_00030",
+      "expected": "cancel_order",
+      "baseline": "cancel_order",
+      "lora": "cancel_order"
+    },
+    {
+      "id": "retail_validation_00031",
+      "expected": "track_order",
+      "baseline": "delivery_complaint",
+      "lora": "delivery_complaint"
+    },
+    {
+      "id": "retail_validation_00032",
+      "expected": "discount_query",
+      "baseline": "discount_query",
+      "lora": "discount_query"
+    },
+    {
+      "id": "retail_validation_00033",
+      "expected": "refund_status",
+      "baseline": "refund_status",
+      "lora": "refund_status"
+    },
+    {
+      "id": "retail_validation_00034",
+      "expected": "other",
+      "baseline": "other",
+      "lora": "other"
+    },
+    {
+      "id": "retail_validation_00035",
+      "expected": "payment_issue",
+      "baseline": "payment_issue",
+      "lora": "payment_issue"
+    },
+    {
+      "id": "retail_validation_00036",
+      "expected": "refund_status",
+      "baseline": "refund_status",
+      "lora": "refund_status"
+    },
+    {
+      "id": "retail_validation_00037",
+      "expected": "damaged_item",
+      "baseline": "damaged_item",
+      "lora": "exchange_product"
+    },
+    {
+      "id": "retail_validation_00038",
+      "expected": "damaged_item",
+      "baseline": "damaged_item",
+      "lora": "damaged_item"
+    },
+    {
+      "id": "retail_validation_00039",
+      "expected": "wrong_item",
+      "baseline": "wrong_item",
+      "lora": "wrong_item"
+    },
+    {
+      "id": "retail_validation_00040",
+      "expected": "track_order",
+      "baseline": "track_order",
+      "lora": "track_order"
+    },
+    {
+      "id": "retail_validation_00041",
+      "expected": "exchange_product",
+      "baseline": "exchange_product",
+      "lora": "exchange_product"
+    },
+    {
+      "id": "retail_validation_00042",
+      "expected": "discount_query",
+      "baseline": "discount_query",
+      "lora": "discount_query"
+    },
+    {
+      "id": "retail_validation_00043",
+      "expected": "damaged_item",
+      "baseline": "damaged_item",
+      "lora": "damaged_item"
+    },
+    {
+      "id": "retail_validation_00044",
+      "expected": "product_information",
+      "baseline": "product_information",
+      "lora": "product_information"
+    },
+    {
+      "id": "retail_validation_00045",
+      "expected": "refund_status",
+      "baseline": "refund_status",
+      "lora": "cancel_order"
+    },
+    {
+      "id": "retail_validation_00046",
+      "expected": "payment_issue",
+      "baseline": "payment_issue",
+      "lora": "payment_issue"
+    },
+    {
+      "id": "retail_validation_00047",
+      "expected": "delivery_complaint",
+      "baseline": "delivery_complaint",
+      "lora": "delivery_complaint"
+    },
+    {
+      "id": "retail_validation_00048",
+      "expected": "other",
+      "baseline": "other",
+      "lora": "other"
+    },
+    {
+      "id": "retail_validation_00049",
+      "expected": "damaged_item",
+      "baseline": "damaged_item",
+      "lora": "damaged_item"
+    },
+    {
+      "id": "retail_validation_00050",
+      "expected": "cancel_order",
+      "baseline": "cancel_order",
+      "lora": "cancel_order"
+    },
+    {
+      "id": "retail_validation_00051",
+      "expected": "cancel_order",
+      "baseline": "cancel_order",
+      "lora": "cancel_order"
+    },
+    {
+      "id": "retail_validation_00052",
+      "expected": "product_availability",
+      "baseline": "product_availability",
+      "lora": "product_availability"
+    },
+    {
+      "id": "retail_validation_00053",
+      "expected": "other",
+      "baseline": "other",
+      "lora": "other"
+    },
+    {
+      "id": "retail_validation_00054",
+      "expected": "exchange_product",
+      "baseline": "exchange_product",
+      "lora": "exchange_product"
+    },
+    {
+      "id": "retail_validation_00055",
+      "expected": "product_information",
+      "baseline": "product_information",
+      "lora": "product_information"
+    },
+    {
+      "id": "retail_validation_00056",
+      "expected": "damaged_item",
+      "baseline": "damaged_item",
+      "lora": "damaged_item"
+    },
+    {
+      "id": "retail_validation_00057",
+      "expected": "return_request",
+      "baseline": "return_request",
+      "lora": "return_request"
+    },
+    {
+      "id": "retail_validation_00058",
+      "expected": "product_information",
+      "baseline": "product_information",
+      "lora": "product_information"
+    },
+    {
+      "id": "retail_validation_00059",
+      "expected": "track_order",
+      "baseline": "track_order",
+      "lora": "track_order"
+    },
+    {
+      "id": "retail_validation_00060",
+      "expected": "exchange_product",
+      "baseline": "exchange_product",
+      "lora": "exchange_product"
+    },
+    {
+      "id": "retail_validation_00061",
+      "expected": "wrong_item",
+      "baseline": "wrong_item",
+      "lora": "wrong_item"
+    },
+    {
+      "id": "retail_validation_00062",
+      "expected": "track_order",
+      "baseline": "track_order",
+      "lora": "track_order"
+    },
+    {
+      "id": "retail_validation_00063",
+      "expected": "exchange_product",
+      "baseline": "exchange_product",
+      "lora": "exchange_product"
+    },
+    {
+      "id": "retail_validation_00064",
+      "expected": "track_order",
+      "baseline": "track_order",
+      "lora": "track_order"
+    },
+    {
+      "id": "retail_validation_00065",
+      "expected": "discount_query",
+      "baseline": "discount_query",
+      "lora": "discount_query"
+    },
+    {
+      "id": "retail_validation_00066",
+      "expected": "exchange_product",
+      "baseline": "exchange_product",
+      "lora": "exchange_product"
+    },
+    {
+      "id": "retail_validation_00067",
+      "expected": "product_information",
+      "baseline": "product_information",
+      "lora": "product_information"
+    },
+    {
+      "id": "retail_validation_00068",
+      "expected": "product_availability",
+      "baseline": "product_availability",
+      "lora": "product_availability"
+    },
+    {
+      "id": "retail_validation_00069",
+      "expected": "delivery_complaint",
+      "baseline": "track_order",
+      "lora": "wrong_item"
+    },
+    {
+      "id": "retail_validation_00070",
+      "expected": "payment_issue",
+      "baseline": "payment_issue",
+      "lora": "payment_issue"
+    },
+    {
+      "id": "retail_validation_00071",
+      "expected": "exchange_product",
+      "baseline": "exchange_product",
+      "lora": "exchange_product"
+    },
+    {
+      "id": "retail_validation_00072",
+      "expected": "refund_status",
+      "baseline": "refund_status",
+      "lora": "refund_status"
+    },
+    {
+      "id": "retail_validation_00073",
+      "expected": "return_request",
+      "baseline": "return_request",
+      "lora": "return_request"
+    },
+    {
+      "id": "retail_validation_00074",
+      "expected": "return_request",
+      "baseline": "return_request",
+      "lora": "return_request"
+    },
+    {
+      "id": "retail_validation_00075",
+      "expected": "delivery_complaint",
+      "baseline": "delivery_complaint",
+      "lora": "track_order"
+    },
+    {
+      "id": "retail_validation_00076",
+      "expected": "damaged_item",
+      "baseline": "damaged_item",
+      "lora": "damaged_item"
+    },
+    {
+      "id": "retail_validation_00077",
+      "expected": "exchange_product",
+      "baseline": "exchange_product",
+      "lora": "exchange_product"
+    },
+    {
+      "id": "retail_validation_00078",
+      "expected": "discount_query",
+      "baseline": "discount_query",
+      "lora": "discount_query"
+    },
+    {
+      "id": "retail_validation_00079",
+      "expected": "delivery_complaint",
+      "baseline": "delivery_complaint",
+      "lora": "delivery_complaint"
+    },
+    {
+      "id": "retail_validation_00080",
+      "expected": "product_information",
+      "baseline": "product_information",
+      "lora": "product_information"
+    },
+    {
+      "id": "retail_validation_00081",
+      "expected": "discount_query",
+      "baseline": "discount_query",
+      "lora": "discount_query"
+    },
+    {
+      "id": "retail_validation_00082",
+      "expected": "product_availability",
+      "baseline": "product_availability",
+      "lora": "product_availability"
+    },
+    {
+      "id": "retail_validation_00083",
+      "expected": "payment_issue",
+      "baseline": "payment_issue",
+      "lora": "payment_issue"
+    },
+    {
+      "id": "retail_validation_00084",
+      "expected": "other",
+      "baseline": "other",
+      "lora": "other"
+    },
+    {
+      "id": "retail_validation_00085",
+      "expected": "wrong_item",
+      "baseline": "wrong_item",
+      "lora": "wrong_item"
+    },
+    {
+      "id": "retail_validation_00087",
+      "expected": "exchange_product",
+      "baseline": "exchange_product",
+      "lora": "exchange_product"
+    },
+    {
+      "id": "retail_validation_00088",
+      "expected": "wrong_item",
+      "baseline": "wrong_item",
+      "lora": "wrong_item"
+    },
+    {
+      "id": "retail_validation_00089",
+      "expected": "product_availability",
+      "baseline": "product_availability",
+      "lora": "product_availability"
+    },
+    {
+      "id": "retail_validation_00090",
+      "expected": "delivery_complaint",
+      "baseline": "delivery_complaint",
+      "lora": "delivery_complaint"
+    },
+    {
+      "id": "retail_validation_00091",
+      "expected": "other",
+      "baseline": "other",
+      "lora": "other"
+    },
+    {
+      "id": "retail_validation_00092",
+      "expected": "product_information",
+      "baseline": "product_information",
+      "lora": "product_information"
+    },
+    {
+      "id": "retail_validation_00093",
+      "expected": "exchange_product",
+      "baseline": "exchange_product",
+      "lora": "exchange_product"
+    },
+    {
+      "id": "retail_validation_00094",
+      "expected": "payment_issue",
+      "baseline": "payment_issue",
+      "lora": "payment_issue"
+    },
+    {
+      "id": "retail_validation_00095",
+      "expected": "return_request",
+      "baseline": "return_request",
+      "lora": "return_request"
+    },
+    {
+      "id": "retail_validation_00096",
+      "expected": "discount_query",
+      "baseline": "discount_query",
+      "lora": "discount_query"
+    },
+    {
+      "id": "retail_validation_00097",
+      "expected": "other",
+      "baseline": "other",
+      "lora": "other"
+    },
+    {
+      "id": "retail_validation_00098",
+      "expected": "track_order",
+      "baseline": "track_order",
+      "lora": "track_order"
+    },
+    {
+      "id": "retail_validation_00099",
+      "expected": "damaged_item",
+      "baseline": "damaged_item",
+      "lora": "damaged_item"
+    },
+    {
+      "id": "retail_validation_00100",
+      "expected": "damaged_item",
+      "baseline": "damaged_item",
+      "lora": "damaged_item"
+    },
+    {
+      "id": "retail_validation_00101",
+      "expected": "track_order",
+      "baseline": "track_order",
+      "lora": "track_order"
+    },
+    {
+      "id": "retail_validation_00102",
+      "expected": "delivery_complaint",
+      "baseline": "delivery_complaint",
+      "lora": "delivery_complaint"
+    },
+    {
+      "id": "retail_validation_00103",
+      "expected": "cancel_order",
+      "baseline": "cancel_order",
+      "lora": "cancel_order"
+    },
+    {
+      "id": "retail_validation_00105",
+      "expected": "return_request",
+      "baseline": "return_request",
+      "lora": "return_request"
+    },
+    {
+      "id": "retail_validation_00106",
+      "expected": "delivery_complaint",
+      "baseline": "delivery_complaint",
+      "lora": "delivery_complaint"
+    },
+    {
+      "id": "retail_validation_00107",
+      "expected": "wrong_item",
+      "baseline": "wrong_item",
+      "lora": "wrong_item"
+    },
+    {
+      "id": "retail_validation_00108",
+      "expected": "discount_query",
+      "baseline": "discount_query",
+      "lora": "discount_query"
+    },
+    {
+      "id": "retail_validation_00109",
+      "expected": "discount_query",
+      "baseline": "discount_query",
+      "lora": "discount_query"
+    },
+    {
+      "id": "retail_validation_00111",
+      "expected": "cancel_order",
+      "baseline": "cancel_order",
+      "lora": "cancel_order"
+    },
+    {
+      "id": "retail_validation_00112",
+      "expected": "track_order",
+      "baseline": "track_order",
+      "lora": "track_order"
+    },
+    {
+      "id": "retail_validation_00113",
+      "expected": "wrong_item",
+      "baseline": "wrong_item",
+      "lora": "wrong_item"
+    },
+    {
+      "id": "retail_validation_00115",
+      "expected": "damaged_item",
+      "baseline": "damaged_item",
+      "lora": "damaged_item"
+    },
+    {
+      "id": "retail_validation_00116",
+      "expected": "other",
+      "baseline": "other",
+      "lora": "other"
+    },
+    {
+      "id": "retail_validation_00117",
+      "expected": "refund_status",
+      "baseline": "refund_status",
+      "lora": "damaged_item"
+    },
+    {
+      "id": "retail_validation_00118",
+      "expected": "damaged_item",
+      "baseline": "damaged_item",
+      "lora": "damaged_item"
+    },
+    {
+      "id": "retail_validation_00119",
+      "expected": "wrong_item",
+      "baseline": "delivery_complaint",
+      "lora": "delivery_complaint"
+    },
+    {
+      "id": "retail_validation_00120",
+      "expected": "product_information",
+      "baseline": "product_information",
+      "lora": "product_information"
+    },
+    {
+      "id": "retail_validation_00121",
+      "expected": "product_availability",
+      "baseline": "product_availability",
+      "lora": "product_availability"
+    },
+    {
+      "id": "retail_validation_00122",
+      "expected": "product_availability",
+      "baseline": "product_availability",
+      "lora": "product_availability"
+    },
+    {
+      "id": "retail_validation_00123",
+      "expected": "exchange_product",
+      "baseline": "exchange_product",
+      "lora": "exchange_product"
+    },
+    {
+      "id": "retail_validation_00124",
+      "expected": "discount_query",
+      "baseline": "discount_query",
+      "lora": "discount_query"
+    },
+    {
+      "id": "retail_validation_00125",
+      "expected": "discount_query",
+      "baseline": "discount_query",
+      "lora": "discount_query"
+    },
+    {
+      "id": "retail_validation_00126",
+      "expected": "refund_status",
+      "baseline": "refund_status",
+      "lora": "refund_status"
+    },
+    {
+      "id": "retail_validation_00127",
+      "expected": "cancel_order",
+      "baseline": "cancel_order",
+      "lora": "cancel_order"
+    },
+    {
+      "id": "retail_validation_00128",
+      "expected": "delivery_complaint",
+      "baseline": "delivery_complaint",
+      "lora": "delivery_complaint"
+    },
+    {
+      "id": "retail_validation_00129",
+      "expected": "other",
+      "baseline": "other",
+      "lora": "other"
+    },
+    {
+      "id": "retail_validation_00130",
+      "expected": "exchange_product",
+      "baseline": "exchange_product",
+      "lora": "exchange_product"
+    },
+    {
+      "id": "retail_validation_00131",
+      "expected": "refund_status",
+      "baseline": "refund_status",
+      "lora": "refund_status"
+    },
+    {
+      "id": "retail_validation_00132",
+      "expected": "exchange_product",
+      "baseline": "exchange_product",
+      "lora": "exchange_product"
+    },
+    {
+      "id": "retail_validation_00133",
+      "expected": "damaged_item",
+      "baseline": "damaged_item",
+      "lora": "product_information"
+    },
+    {
+      "id": "retail_validation_00134",
+      "expected": "delivery_complaint",
+      "baseline": "delivery_complaint",
+      "lora": "delivery_complaint"
+    },
+    {
+      "id": "retail_validation_00135",
+      "expected": "track_order",
+      "baseline": "track_order",
+      "lora": "track_order"
+    },
+    {
+      "id": "retail_validation_00136",
+      "expected": "delivery_complaint",
+      "baseline": "delivery_complaint",
+      "lora": "wrong_item"
+    },
+    {
+      "id": "retail_validation_00137",
+      "expected": "damaged_item",
+      "baseline": "damaged_item",
+      "lora": "damaged_item"
+    },
+    {
+      "id": "retail_validation_00139",
+      "expected": "cancel_order",
+      "baseline": "cancel_order",
+      "lora": "cancel_order"
+    },
+    {
+      "id": "retail_validation_00140",
+      "expected": "track_order",
+      "baseline": "track_order",
+      "lora": "track_order"
+    },
+    {
+      "id": "retail_validation_00141",
+      "expected": "product_information",
+      "baseline": "product_information",
+      "lora": "product_information"
+    },
+    {
+      "id": "retail_validation_00142",
+      "expected": "damaged_item",
+      "baseline": "damaged_item",
+      "lora": "damaged_item"
+    },
+    {
+      "id": "retail_validation_00143",
+      "expected": "other",
+      "baseline": "other",
+      "lora": "other"
+    },
+    {
+      "id": "retail_validation_00144",
+      "expected": "track_order",
+      "baseline": "track_order",
+      "lora": "track_order"
+    },
+    {
+      "id": "retail_validation_00145",
+      "expected": "track_order",
+      "baseline": "track_order",
+      "lora": "track_order"
+    },
+    {
+      "id": "retail_validation_00146",
+      "expected": "damaged_item",
+      "baseline": "damaged_item",
+      "lora": "damaged_item"
+    },
+    {
+      "id": "retail_validation_00147",
+      "expected": "refund_status",
+      "baseline": "refund_status",
+      "lora": "refund_status"
+    },
+    {
+      "id": "retail_validation_00148",
+      "expected": "cancel_order",
+      "baseline": "cancel_order",
+      "lora": "cancel_order"
+    },
+    {
+      "id": "retail_validation_00149",
+      "expected": "wrong_item",
+      "baseline": "wrong_item",
+      "lora": "wrong_item"
+    },
+    {
+      "id": "retail_validation_00150",
+      "expected": "other",
+      "baseline": "other",
+      "lora": "other"
+    },
+    {
+      "id": "retail_validation_00151",
+      "expected": "discount_query",
+      "baseline": "discount_query",
+      "lora": "discount_query"
+    },
+    {
+      "id": "retail_validation_00152",
+      "expected": "return_request",
+      "baseline": "return_request",
+      "lora": "return_request"
+    },
+    {
+      "id": "retail_validation_00153",
+      "expected": "damaged_item",
+      "baseline": "damaged_item",
+      "lora": "damaged_item"
+    },
+    {
+      "id": "retail_validation_00154",
+      "expected": "delivery_complaint",
+      "baseline": "delivery_complaint",
+      "lora": "delivery_complaint"
+    },
+    {
+      "id": "retail_validation_00155",
+      "expected": "return_request",
+      "baseline": "return_request",
+      "lora": "return_request"
+    },
+    {
+      "id": "retail_validation_00156",
+      "expected": "track_order",
+      "baseline": "track_order",
+      "lora": "track_order"
+    },
+    {
+      "id": "retail_validation_00157",
+      "expected": "product_availability",
+      "baseline": "track_order",
+      "lora": "product_availability"
+    },
+    {
+      "id": "retail_validation_00158",
+      "expected": "damaged_item",
+      "baseline": "damaged_item",
+      "lora": "damaged_item"
+    },
+    {
+      "id": "retail_validation_00159",
+      "expected": "exchange_product",
+      "baseline": "exchange_product",
+      "lora": "exchange_product"
+    },
+    {
+      "id": "retail_validation_00160",
+      "expected": "damaged_item",
+      "baseline": "damaged_item",
+      "lora": "damaged_item"
+    },
+    {
+      "id": "retail_validation_00161",
+      "expected": "delivery_complaint",
+      "baseline": "delivery_complaint",
+      "lora": "delivery_complaint"
+    },
+    {
+      "id": "retail_validation_00162",
+      "expected": "track_order",
+      "baseline": "track_order",
+      "lora": "track_order"
+    },
+    {
+      "id": "retail_validation_00163",
+      "expected": "track_order",
+      "baseline": "track_order",
+      "lora": "track_order"
+    },
+    {
+      "id": "retail_validation_00164",
+      "expected": "refund_status",
+      "baseline": "refund_status",
+      "lora": "refund_status"
+    },
+    {
+      "id": "retail_validation_00165",
+      "expected": "refund_status",
+      "baseline": "refund_status",
+      "lora": "refund_status"
+    },
+    {
+      "id": "retail_validation_00166",
+      "expected": "track_order",
+      "baseline": "delivery_complaint",
+      "lora": "delivery_complaint"
+    },
+    {
+      "id": "retail_validation_00167",
+      "expected": "cancel_order",
+      "baseline": "cancel_order",
+      "lora": "cancel_order"
+    },
+    {
+      "id": "retail_validation_00168",
+      "expected": "product_information",
+      "baseline": "product_information",
+      "lora": "product_information"
+    },
+    {
+      "id": "retail_validation_00169",
+      "expected": "product_availability",
+      "baseline": "product_availability",
+      "lora": "product_availability"
+    },
+    {
+      "id": "retail_validation_00170",
+      "expected": "payment_issue",
+      "baseline": "payment_issue",
+      "lora": "payment_issue"
+    },
+    {
+      "id": "retail_validation_00171",
+      "expected": "exchange_product",
+      "baseline": "exchange_product",
+      "lora": "exchange_product"
+    },
+    {
+      "id": "retail_validation_00172",
+      "expected": "cancel_order",
+      "baseline": "cancel_order",
+      "lora": "cancel_order"
+    },
+    {
+      "id": "retail_validation_00173",
+      "expected": "wrong_item",
+      "baseline": "wrong_item",
+      "lora": "wrong_item"
+    },
+    {
+      "id": "retail_validation_00174",
+      "expected": "cancel_order",
+      "baseline": "cancel_order",
+      "lora": "cancel_order"
+    },
+    {
+      "id": "retail_validation_00175",
+      "expected": "wrong_item",
+      "baseline": "wrong_item",
+      "lora": "wrong_item"
+    },
+    {
+      "id": "retail_validation_00176",
+      "expected": "cancel_order",
+      "baseline": "cancel_order",
+      "lora": "cancel_order"
+    },
+    {
+      "id": "retail_validation_00177",
+      "expected": "product_information",
+      "baseline": "product_information",
+      "lora": "product_information"
+    },
+    {
+      "id": "retail_validation_00178",
+      "expected": "delivery_complaint",
+      "baseline": "wrong_item",
+      "lora": "wrong_item"
+    },
+    {
+      "id": "retail_validation_00179",
+      "expected": "refund_status",
+      "baseline": "refund_status",
+      "lora": "refund_status"
+    },
+    {
+      "id": "retail_validation_00180",
+      "expected": "refund_status",
+      "baseline": "refund_status",
+      "lora": "refund_status"
+    },
+    {
+      "id": "retail_validation_00181",
+      "expected": "return_request",
+      "baseline": "return_request",
+      "lora": "return_request"
+    },
+    {
+      "id": "retail_validation_00182",
+      "expected": "payment_issue",
+      "baseline": "payment_issue",
+      "lora": "payment_issue"
+    },
+    {
+      "id": "retail_validation_00183",
+      "expected": "cancel_order",
+      "baseline": "cancel_order",
+      "lora": "cancel_order"
+    },
+    {
+      "id": "retail_validation_00184",
+      "expected": "delivery_complaint",
+      "baseline": "delivery_complaint",
+      "lora": "wrong_item"
+    },
+    {
+      "id": "retail_validation_00185",
+      "expected": "return_request",
+      "baseline": "return_request",
+      "lora": "return_request"
+    },
+    {
+      "id": "retail_validation_00186",
+      "expected": "wrong_item",
+      "baseline": "wrong_item",
+      "lora": "wrong_item"
+    },
+    {
+      "id": "retail_validation_00188",
+      "expected": "cancel_order",
+      "baseline": "cancel_order",
+      "lora": "cancel_order"
+    },
+    {
+      "id": "retail_validation_00189",
+      "expected": "payment_issue",
+      "baseline": "payment_issue",
+      "lora": "payment_issue"
+    },
+    {
+      "id": "retail_validation_00190",
+      "expected": "product_availability",
+      "baseline": "product_availability",
+      "lora": "product_availability"
+    },
+    {
+      "id": "retail_validation_00191",
+      "expected": "other",
+      "baseline": "other",
+      "lora": "other"
+    },
+    {
+      "id": "retail_validation_00192",
+      "expected": "discount_query",
+      "baseline": "discount_query",
+      "lora": "discount_query"
+    },
+    {
+      "id": "retail_validation_00193",
+      "expected": "payment_issue",
+      "baseline": "payment_issue",
+      "lora": "payment_issue"
+    },
+    {
+      "id": "retail_validation_00194",
+      "expected": "delivery_complaint",
+      "baseline": "delivery_complaint",
+      "lora": "delivery_complaint"
+    },
+    {
+      "id": "retail_validation_00195",
+      "expected": "refund_status",
+      "baseline": "refund_status",
+      "lora": "refund_status"
+    },
+    {
+      "id": "retail_validation_00196",
+      "expected": "refund_status",
+      "baseline": "refund_status",
+      "lora": "refund_status"
+    },
+    {
+      "id": "retail_validation_00197",
+      "expected": "product_availability",
+      "baseline": "product_availability",
+      "lora": "product_availability"
+    },
+    {
+      "id": "retail_validation_00198",
+      "expected": "return_request",
+      "baseline": "return_request",
+      "lora": "return_request"
+    },
+    {
+      "id": "retail_validation_00199",
+      "expected": "delivery_complaint",
+      "baseline": "delivery_complaint",
+      "lora": "delivery_complaint"
+    },
+    {
+      "id": "retail_validation_00200",
+      "expected": "wrong_item",
+      "baseline": "wrong_item",
+      "lora": "wrong_item"
+    },
+    {
+      "id": "retail_validation_00201",
+      "expected": "payment_issue",
+      "baseline": "payment_issue",
+      "lora": "payment_issue"
+    },
+    {
+      "id": "retail_validation_00202",
+      "expected": "other",
+      "baseline": "other",
+      "lora": "other"
+    },
+    {
+      "id": "retail_validation_00203",
+      "expected": "wrong_item",
+      "baseline": "wrong_item",
+      "lora": "wrong_item"
+    },
+    {
+      "id": "retail_validation_00204",
+      "expected": "product_availability",
+      "baseline": "track_order",
+      "lora": "product_availability"
+    },
+    {
+      "id": "retail_validation_00205",
+      "expected": "delivery_complaint",
+      "baseline": "delivery_complaint",
+      "lora": "delivery_complaint"
+    },
+    {
+      "id": "retail_validation_00206",
+      "expected": "payment_issue",
+      "baseline": "payment_issue",
+      "lora": "payment_issue"
+    },
+    {
+      "id": "retail_validation_00207",
+      "expected": "other",
+      "baseline": "other",
+      "lora": "other"
+    },
+    {
+      "id": "retail_validation_00208",
+      "expected": "product_information",
+      "baseline": "product_information",
+      "lora": "product_information"
+    },
+    {
+      "id": "retail_validation_00209",
+      "expected": "product_information",
+      "baseline": "product_information",
+      "lora": "product_information"
+    },
+    {
+      "id": "retail_validation_00210",
+      "expected": "exchange_product",
+      "baseline": "exchange_product",
+      "lora": "exchange_product"
+    },
+    {
+      "id": "retail_validation_00211",
+      "expected": "refund_status",
+      "baseline": "refund_status",
+      "lora": "refund_status"
+    },
+    {
+      "id": "retail_validation_00212",
+      "expected": "payment_issue",
+      "baseline": "payment_issue",
+      "lora": "payment_issue"
+    },
+    {
+      "id": "retail_validation_00214",
+      "expected": "return_request",
+      "baseline": "return_request",
+      "lora": "return_request"
+    },
+    {
+      "id": "retail_validation_00215",
+      "expected": "exchange_product",
+      "baseline": "exchange_product",
+      "lora": "exchange_product"
+    },
+    {
+      "id": "retail_validation_00216",
+      "expected": "other",
+      "baseline": "other",
+      "lora": "other"
+    },
+    {
+      "id": "retail_validation_00217",
+      "expected": "delivery_complaint",
+      "baseline": "delivery_complaint",
+      "lora": "delivery_complaint"
+    },
+    {
+      "id": "retail_validation_00218",
+      "expected": "refund_status",
+      "baseline": "refund_status",
+      "lora": "refund_status"
+    },
+    {
+      "id": "retail_validation_00219",
+      "expected": "payment_issue",
+      "baseline": "payment_issue",
+      "lora": "payment_issue"
+    },
+    {
+      "id": "retail_validation_00220",
+      "expected": "delivery_complaint",
+      "baseline": "track_order",
+      "lora": "wrong_item"
+    },
+    {
+      "id": "retail_validation_00221",
+      "expected": "return_request",
+      "baseline": "return_request",
+      "lora": "return_request"
+    },
+    {
+      "id": "retail_validation_00222",
+      "expected": "refund_status",
+      "baseline": "refund_status",
+      "lora": "refund_status"
+    },
+    {
+      "id": "retail_validation_00223",
+      "expected": "track_order",
+      "baseline": "track_order",
+      "lora": "track_order"
+    },
+    {
+      "id": "retail_validation_00224",
+      "expected": "product_availability",
+      "baseline": "product_availability",
+      "lora": "product_availability"
+    },
+    {
+      "id": "retail_validation_00225",
+      "expected": "product_information",
+      "baseline": "product_information",
+      "lora": "product_information"
+    },
+    {
+      "id": "retail_validation_00226",
+      "expected": "other",
+      "baseline": "other",
+      "lora": "other"
+    },
+    {
+      "id": "retail_validation_00227",
+      "expected": "wrong_item",
+      "baseline": "wrong_item",
+      "lora": "wrong_item"
+    },
+    {
+      "id": "retail_validation_00228",
+      "expected": "return_request",
+      "baseline": "return_request",
+      "lora": "return_request"
+    },
+    {
+      "id": "retail_validation_00229",
+      "expected": "exchange_product",
+      "baseline": "exchange_product",
+      "lora": "exchange_product"
+    },
+    {
+      "id": "retail_validation_00230",
+      "expected": "refund_status",
+      "baseline": "refund_status",
+      "lora": "refund_status"
+    },
+    {
+      "id": "retail_validation_00231",
+      "expected": "exchange_product",
+      "baseline": "exchange_product",
+      "lora": "exchange_product"
+    },
+    {
+      "id": "retail_validation_00232",
+      "expected": "product_availability",
+      "baseline": "product_availability",
+      "lora": "product_availability"
+    },
+    {
+      "id": "retail_validation_00233",
+      "expected": "product_information",
+      "baseline": "product_information",
+      "lora": "product_information"
+    },
+    {
+      "id": "retail_validation_00234",
+      "expected": "exchange_product",
+      "baseline": "exchange_product",
+      "lora": "exchange_product"
+    },
+    {
+      "id": "retail_validation_00235",
+      "expected": "product_information",
+      "baseline": "product_information",
+      "lora": "product_information"
+    },
+    {
+      "id": "retail_validation_00236",
+      "expected": "cancel_order",
+      "baseline": "cancel_order",
+      "lora": "cancel_order"
+    },
+    {
+      "id": "retail_validation_00237",
+      "expected": "product_availability",
+      "baseline": "product_availability",
+      "lora": "product_availability"
+    },
+    {
+      "id": "retail_validation_00238",
+      "expected": "discount_query",
+      "baseline": "discount_query",
+      "lora": "discount_query"
+    },
+    {
+      "id": "retail_validation_00239",
+      "expected": "damaged_item",
+      "baseline": "damaged_item",
+      "lora": "damaged_item"
+    },
+    {
+      "id": "retail_validation_00240",
+      "expected": "payment_issue",
+      "baseline": "payment_issue",
+      "lora": "payment_issue"
+    },
+    {
+      "id": "retail_validation_00241",
+      "expected": "delivery_complaint",
+      "baseline": "delivery_complaint",
+      "lora": "delivery_complaint"
+    },
+    {
+      "id": "retail_validation_00242",
+      "expected": "refund_status",
+      "baseline": "refund_status",
+      "lora": "refund_status"
+    },
+    {
+      "id": "retail_validation_00243",
+      "expected": "discount_query",
+      "baseline": "discount_query",
+      "lora": "discount_query"
+    },
+    {
+      "id": "retail_validation_00244",
+      "expected": "payment_issue",
+      "baseline": "payment_issue",
+      "lora": "payment_issue"
+    },
+    {
+      "id": "retail_validation_00245",
+      "expected": "track_order",
+      "baseline": "track_order",
+      "lora": "track_order"
+    },
+    {
+      "id": "retail_validation_00246",
+      "expected": "discount_query",
+      "baseline": "discount_query",
+      "lora": "discount_query"
+    },
+    {
+      "id": "retail_validation_00247",
+      "expected": "delivery_complaint",
+      "baseline": "delivery_complaint",
+      "lora": "delivery_complaint"
+    },
+    {
+      "id": "retail_validation_00248",
+      "expected": "wrong_item",
+      "baseline": "damaged_item",
+      "lora": "damaged_item"
+    },
+    {
+      "id": "retail_validation_00249",
+      "expected": "return_request",
+      "baseline": "return_request",
+      "lora": "return_request"
+    },
+    {
+      "id": "retail_validation_00250",
+      "expected": "payment_issue",
+      "baseline": "payment_issue",
+      "lora": "payment_issue"
+    },
+    {
+      "id": "retail_validation_00251",
+      "expected": "discount_query",
+      "baseline": "discount_query",
+      "lora": "discount_query"
+    },
+    {
+      "id": "retail_validation_00252",
+      "expected": "product_availability",
+      "baseline": "product_availability",
+      "lora": "product_availability"
+    },
+    {
+      "id": "retail_validation_00253",
+      "expected": "product_availability",
+      "baseline": "product_availability",
+      "lora": "product_availability"
+    },
+    {
+      "id": "retail_validation_00254",
+      "expected": "damaged_item",
+      "baseline": "wrong_item",
+      "lora": "damaged_item"
+    },
+    {
+      "id": "retail_validation_00255",
+      "expected": "cancel_order",
+      "baseline": "cancel_order",
+      "lora": "cancel_order"
+    },
+    {
+      "id": "retail_validation_00257",
+      "expected": "wrong_item",
+      "baseline": "wrong_item",
+      "lora": "wrong_item"
+    },
+    {
+      "id": "retail_validation_00258",
+      "expected": "product_availability",
+      "baseline": "product_availability",
+      "lora": "product_availability"
+    },
+    {
+      "id": "retail_validation_00259",
+      "expected": "product_availability",
+      "baseline": "product_availability",
+      "lora": "product_availability"
+    },
+    {
+      "id": "retail_validation_00260",
+      "expected": "payment_issue",
+      "baseline": "payment_issue",
+      "lora": "payment_issue"
+    },
+    {
+      "id": "retail_validation_00261",
+      "expected": "product_availability",
+      "baseline": "product_availability",
+      "lora": "product_information"
+    },
+    {
+      "id": "retail_validation_00262",
+      "expected": "cancel_order",
+      "baseline": "cancel_order",
+      "lora": "cancel_order"
+    },
+    {
+      "id": "retail_validation_00263",
+      "expected": "return_request",
+      "baseline": "return_request",
+      "lora": "return_request"
+    },
+    {
+      "id": "retail_validation_00264",
+      "expected": "track_order",
+      "baseline": "track_order",
+      "lora": "track_order"
+    },
+    {
+      "id": "retail_validation_00265",
+      "expected": "discount_query",
+      "baseline": "discount_query",
+      "lora": "discount_query"
+    },
+    {
+      "id": "retail_validation_00266",
+      "expected": "cancel_order",
+      "baseline": "cancel_order",
+      "lora": "cancel_order"
+    },
+    {
+      "id": "retail_validation_00267",
+      "expected": "discount_query",
+      "baseline": "discount_query",
+      "lora": "discount_query"
+    },
+    {
+      "id": "retail_validation_00268",
+      "expected": "return_request",
+      "baseline": "return_request",
+      "lora": "return_request"
+    },
+    {
+      "id": "retail_validation_00269",
+      "expected": "payment_issue",
+      "baseline": "payment_issue",
+      "lora": "payment_issue"
+    },
+    {
+      "id": "retail_validation_00270",
+      "expected": "return_request",
+      "baseline": "return_request",
+      "lora": "return_request"
+    },
+    {
+      "id": "retail_validation_00271",
+      "expected": "return_request",
+      "baseline": "return_request",
+      "lora": "return_request"
+    },
+    {
+      "id": "retail_validation_00272",
+      "expected": "refund_status",
+      "baseline": "cancel_order",
+      "lora": "cancel_order"
+    },
+    {
+      "id": "retail_validation_00273",
+      "expected": "product_availability",
+      "baseline": "product_availability",
+      "lora": "product_availability"
+    },
+    {
+      "id": "retail_validation_00274",
+      "expected": "payment_issue",
+      "baseline": "payment_issue",
+      "lora": "payment_issue"
+    },
+    {
+      "id": "retail_validation_00275",
+      "expected": "other",
+      "baseline": "other",
+      "lora": "other"
+    },
+    {
+      "id": "retail_validation_00276",
+      "expected": "return_request",
+      "baseline": "return_request",
+      "lora": "return_request"
+    },
+    {
+      "id": "retail_validation_00277",
+      "expected": "product_information",
+      "baseline": "product_information",
+      "lora": "product_information"
+    },
+    {
+      "id": "retail_validation_00278",
+      "expected": "damaged_item",
+      "baseline": "damaged_item",
+      "lora": "damaged_item"
+    },
+    {
+      "id": "retail_validation_00279",
+      "expected": "product_information",
+      "baseline": "product_information",
+      "lora": "product_information"
+    },
+    {
+      "id": "retail_validation_00280",
+      "expected": "exchange_product",
+      "baseline": "exchange_product",
+      "lora": "exchange_product"
+    },
+    {
+      "id": "retail_validation_00281",
+      "expected": "damaged_item",
+      "baseline": "damaged_item",
+      "lora": "damaged_item"
+    },
+    {
+      "id": "retail_validation_00282",
+      "expected": "delivery_complaint",
+      "baseline": "delivery_complaint",
+      "lora": "wrong_item"
+    },
+    {
+      "id": "retail_validation_00283",
+      "expected": "payment_issue",
+      "baseline": "wrong_item",
+      "lora": "payment_issue"
+    },
+    {
+      "id": "retail_validation_00284",
+      "expected": "payment_issue",
+      "baseline": "payment_issue",
+      "lora": "payment_issue"
+    },
+    {
+      "id": "retail_validation_00285",
+      "expected": "delivery_complaint",
+      "baseline": "delivery_complaint",
+      "lora": "delivery_complaint"
+    }
+  ]
+}

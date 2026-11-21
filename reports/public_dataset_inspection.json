@@ -1,0 +1,81 @@
+{
+  "dataset_id": "Hari5115/hinglish-retail-intent-dataset",
+  "revision": "3b4ab333bfeab463c9407911e958a5e6af6199ac",
+  "source_url": "https://huggingface.co/datasets/Hari5115/hinglish-retail-intent-dataset",
+  "splits": {
+    "train": {
+      "rows": 2292,
+      "label_counts": {
+        "cancel_order": 173,
+        "damaged_item": 178,
+        "delivery_complaint": 181,
+        "discount_query": 183,
+        "exchange_product": 174,
+        "other": 154,
+        "payment_issue": 183,
+        "product_availability": 183,
+        "product_information": 170,
+        "refund_status": 182,
+        "return_request": 180,
+        "track_order": 178,
+        "wrong_item": 173
+      },
+      "duplicate_text_rows": 190
+    },
+    "validation": {
+      "rows": 286,
+      "label_counts": {
+        "cancel_order": 21,
+        "damaged_item": 22,
+        "delivery_complaint": 23,
+        "discount_query": 23,
+        "exchange_product": 22,
+        "other": 19,
+        "payment_issue": 23,
+        "product_availability": 23,
+        "product_information": 21,
+        "refund_status": 23,
+        "return_request": 22,
+        "track_order": 22,
+        "wrong_item": 22
+      },
+      "duplicate_text_rows": 2
+    },
+    "test": {
+      "rows": 287,
+      "label_counts": {
+        "cancel_order": 22,
+        "damaged_item": 23,
+        "delivery_complaint": 23,
+        "discount_query": 23,
+        "exchange_product": 21,
+        "other": 19,
+        "payment_issue": 23,
+        "product_availability": 23,
+        "product_information": 21,
+        "refund_status": 23,
+        "return_request": 23,
+        "track_order": 22,
+        "wrong_item": 21
+      },
+      "duplicate_text_rows": 1
+    }
+  },
+  "labels": [
+    "cancel_order",
+    "damaged_item",
+    "delivery_complaint",
+    "discount_query",
+    "exchange_product",
+    "other",
+    "payment_issue",
+    "product_availability",
+    "product_information",
+    "refund_status",
+    "return_request",
+    "track_order",
+    "wrong_item"
+  ],
+  "cross_split_duplicate_texts": 68,
+  "conflicting_label_texts": 0
+}

@@ -19,35 +19,44 @@ st.set_page_config(
 )
 
 st.title("SupportSathi")
-st.write(
-    "Classify online shopping support messages "
-    "in English, Hindi, or Hinglish."
-)
+st.write("A retail support intent classifier for Roman-script Hinglish.")
+st.caption("Compare a traditional text classifier with a LoRA-adapted model.")
+
 st.warning(
-    "Development prototype trained on 100 AI-generated examples. "
-    "Predictions may be incorrect. Avoid entering personal information."
+    "Research prototype trained on public synthetic data. "
+    "Predictions may be incorrect. Do not enter personal information."
 )
 
-classify_tab, results_tab, labels_tab = st.tabs([
-    "Classify a message",
-    "Validation results",
+try:
+    config = json.loads(
+        (ROOT / "configs/labels_public_v1.json").read_text(
+            encoding="utf-8-sig"
+        )
+    )
+except (OSError, ValueError):
+    st.error("Could not load configs/labels_public_v1.json.")
+    st.stop()
+
+classify_tab, results_tab, guide_tab = st.tabs([
+    "Classify",
+    "Model comparison",
     "Category guide",
 ])
 
 with classify_tab:
     with st.form("prediction_form"):
         selected_model = st.selectbox(
-            "Model",
+            "Choose a model",
             options=list(MODEL_NAMES),
             format_func=lambda value: MODEL_NAMES[value],
         )
         message = st.text_area(
             "Customer message",
-            placeholder="Mera parcel kab aayega?",
+            placeholder="Mera order kahan hai? Tracking link bhej do.",
             max_chars=1000,
             height=130,
         )
-        submitted = st.form_submit_button("Classify")
+        submitted = st.form_submit_button("Classify message")
 
     if submitted:
         if not message.strip():
@@ -66,15 +75,17 @@ with classify_tab:
                     response.raise_for_status()
                     result = response.json()
 
-                st.subheader(
-                    result["intent"].replace("_", " ").title()
-                )
+                intent = result["intent"]
+                if intent not in config["labels"]:
+                    raise ValueError("Unknown category returned by API.")
+
+                st.subheader(intent.replace("_", " ").title())
+                st.write(config["labels"][intent])
                 st.caption(f"Model: {result['model_version']}")
                 st.caption(
-                    f"API processing time: {result['latency_ms']} ms"
-                )
-                st.caption(
-                    "This time excludes network transfer and UI rendering."
+                    f"API processing time: {result['latency_ms']} ms. "
+                    "Excludes request queueing, network transfer, "
+                    "and interface rendering."
                 )
 
             except requests.exceptions.ConnectionError:
@@ -90,6 +101,7 @@ with classify_tab:
                     )
                 except ValueError:
                     detail = "Request failed."
+
                 st.error(
                     f"API error {error.response.status_code}: {detail}"
                 )
@@ -99,64 +111,97 @@ with classify_tab:
                 st.error("The request failed. Please try again.")
 
 with results_tab:
-    st.subheader("Development validation comparison")
-    report_path = ROOT / "reports/validation_v2.json"
+    selected_split = st.radio(
+        "Evaluation split",
+        options=["Final test", "Validation"],
+        horizontal=True,
+    )
 
-    if report_path.exists():
+    report_name = (
+        "public_test.json"
+        if selected_split == "Final test"
+        else "public_validation.json"
+    )
+    report_path = ROOT / "reports" / report_name
+
+    if not report_path.exists():
+        st.info(f"Evaluation report not found: {report_name}")
+    else:
         try:
             report = json.loads(
                 report_path.read_text(encoding="utf-8")
             )
 
             rows = []
-            for key, name in [
-                ("tfidf_baseline_v2", "TF-IDF baseline"),
-                ("lora_v2", "MiniLM + LoRA"),
-            ]:
-                metrics = report[key]
+            for model_key, name in MODEL_NAMES.items():
+                metrics = report["models"][model_key]
                 rows.append({
                     "Model": name,
                     "Accuracy": f"{metrics['accuracy']:.2%}",
                     "Macro-F1": f"{metrics['macro_f1']:.4f}",
+                    "Mistakes": len(metrics["mistakes"]),
                 })
 
             st.table(rows)
             st.caption(
                 f"Training examples: {report['training_examples']} · "
-                f"Validation examples: {report['validation_examples']}"
+                f"{selected_split} examples: "
+                f"{report['evaluation_examples']}"
             )
             st.write(
-                "Macro-F1 gives each category equal weight. "
-                "Higher values indicate better performance on this dataset."
+                "Accuracy measures the fraction of correct predictions. "
+                "Macro-F1 gives each category equal weight."
             )
-            st.info(
-                "These are results on a small, AI-generated development "
-                "validation set used during model development. "
-                "They are not final-test or real-world accuracy estimates."
+
+            if selected_split == "Validation":
+                st.info(
+                    "Validation macro-F1 was used to select the LoRA "
+                    "checkpoint. This is a development result."
+                )
+            else:
+                st.info(
+                    "The final test split was excluded from fitting and "
+                    "checkpoint selection. Results apply to this cleaned "
+                    "synthetic dataset, not real customer traffic."
+                )
+
+            st.caption(
+                "Exact normalized text duplicates were removed across "
+                "splits. Paraphrase leakage has not been audited."
             )
-        except (ValueError, KeyError):
-            st.error(
-                "The validation report is invalid. "
-                "Run scripts/evaluate_validation.py again."
+
+            mistake_model = st.selectbox(
+                "Inspect mistakes",
+                options=list(MODEL_NAMES),
+                format_func=lambda value: MODEL_NAMES[value],
             )
-    else:
-        st.info(
-            "Run scripts/evaluate_validation.py to generate the report."
+            mistakes = report["models"][mistake_model]["mistakes"]
+
+            if mistakes:
+                st.dataframe(
+                    mistakes,
+                    hide_index=True,
+                    use_container_width=True,
+                )
+            else:
+                st.write("No mistakes recorded for this split.")
+
+        except (OSError, ValueError, KeyError):
+            st.error("Could not read the evaluation report.")
+
+with guide_tab:
+    for label, description in config["labels"].items():
+        st.markdown(
+            f"**{label.replace('_', ' ').title()}** — {description}"
         )
 
-with labels_tab:
-    config_path = ROOT / "configs/labels.json"
-    try:
-        config = json.loads(
-            config_path.read_text(encoding="utf-8-sig")
-        )
-        for label, description in config["labels"].items():
-            st.markdown(
-                f"**{label.replace('_', ' ').title()}** — {description}"
-            )
-        st.caption(
-            "An explicit requested action takes priority "
-            "over the problem description."
-        )
-    except (OSError, ValueError, KeyError):
-        st.error("Could not read the category definitions.")
+    st.markdown(
+        "[Public dataset and documentation]"
+        "(https://huggingface.co/datasets/"
+        "Hari5115/hinglish-retail-intent-dataset)"
+    )
+    st.caption(
+        "The source dataset lists an MIT license. "
+        "Its messages are primarily synthetic Roman-script Hinglish. "
+        "Devanagari Hindi performance has not been separately evaluated."
+    )

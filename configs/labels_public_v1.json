@@ -1,0 +1,27 @@
+{
+  "version": "public-retail-v1",
+  "task": "Classify a retail support message into one of thirteen intents.",
+  "dataset": "Hari5115/hinglish-retail-intent-dataset",
+  "dataset_revision": "3b4ab333bfeab463c9407911e958a5e6af6199ac",
+  "labels": {
+    "cancel_order": "Request cancellation of a placed order.",
+    "damaged_item": "Report an item that arrived broken, damaged, or defective.",
+    "delivery_complaint": "Report late delivery, non-delivery, or a delivery-agent problem.",
+    "discount_query": "Ask about discounts or report a coupon or promotional-code problem.",
+    "exchange_product": "Ask to exchange a product, including size, colour, or variant changes.",
+    "other": "A message that does not fit the supported retail intents.",
+    "payment_issue": "Report a failed, pending, or duplicate payment, or money deducted without order confirmation.",
+    "product_availability": "Ask whether a product, size, colour, or variant is available.",
+    "product_information": "Ask about product specifications, materials, dimensions, compatibility, or care.",
+    "refund_status": "Ask about the status or timing of a refund.",
+    "return_request": "Request a product return or ask how to arrange it.",
+    "track_order": "Ask about an order's location, progress, or expected arrival.",
+    "wrong_item": "Report receiving a different product from the one ordered."
+  },
+  "annotation_notes": [
+    "These definitions follow the public dataset's thirteen-intent taxonomy.",
+    "Review ambiguous examples where multiple intents overlap.",
+    "Do not automatically apply the earlier ten-category annotation rules.",
+    "The dataset is synthetic; evaluation does not establish real customer performance."
+  ]
+}

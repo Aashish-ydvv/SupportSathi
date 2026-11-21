@@ -1,0 +1,84 @@
+{
+  "readiness_passed": true,
+  "model_versions": {
+    "baseline": "retail-tfidf-public-v1",
+    "lora": "retail-minilm-lora-public-v1"
+  },
+  "label_count": 13,
+  "passed": 12,
+  "total": 12,
+  "checks": [
+    {
+      "name": "Empty message",
+      "expected_status": 422,
+      "passed": true,
+      "actual_status": 422
+    },
+    {
+      "name": "Whitespace only",
+      "expected_status": 422,
+      "passed": true,
+      "actual_status": 422
+    },
+    {
+      "name": "Over character limit",
+      "expected_status": 422,
+      "passed": true,
+      "actual_status": 422
+    },
+    {
+      "name": "Missing text",
+      "expected_status": 422,
+      "passed": true,
+      "actual_status": 422
+    },
+    {
+      "name": "Unsupported model",
+      "expected_status": 422,
+      "passed": true,
+      "actual_status": 422
+    },
+    {
+      "name": "Wrong text type",
+      "expected_status": 422,
+      "passed": true,
+      "actual_status": 422
+    },
+    {
+      "name": "Malformed JSON",
+      "expected_status": 422,
+      "passed": true,
+      "actual_status": 422
+    },
+    {
+      "name": "LoRA token limit",
+      "expected_status": 422,
+      "passed": true,
+      "actual_status": 422
+    },
+    {
+      "name": "Baseline prediction",
+      "expected_status": 200,
+      "passed": true,
+      "actual_status": 200
+    },
+    {
+      "name": "LoRA prediction",
+      "expected_status": 200,
+      "passed": true,
+      "actual_status": 200
+    },
+    {
+      "name": "Product information message",
+      "expected_status": 200,
+      "passed": true,
+      "actual_status": 200
+    },
+    {
+      "name": "Instruction-like text returns an allowed label",
+      "expected_status": 200,
+      "passed": true,
+      "actual_status": 200
+    }
+  ]
+}
